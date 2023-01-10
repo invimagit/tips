@@ -1,0 +1,226 @@
+.addPointer
+{
+    cursor:pointer;
+}
+
+.inputError
+{
+    display: none;
+}
+
+.label-danger
+{
+    font-size: .85em;
+    font-weight: 400;
+    display: block;
+    font-family: 'Klavika';
+}
+
+div#otraOrganizacion
+{
+    display: none;
+}
+
+button.btn.dropdown-toggle.btn-light:focus
+{
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgb(220 53 69 / 25%);
+}
+
+button.btn.dropdown-toggle.btn-light
+{
+    font-family: 'Klavika';
+    border: solid 2px;
+    -webkit-border-radius: 3em;
+    -moz-border-radius: 3em;
+    border-radius: 3em;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    border-color: var(--primary);
+    padding-top: 7px;
+    padding-bottom: 6px;
+    background: #FFF;
+    outline: none !important;
+    color: var(--tertiary) !important;
+}
+
+button.btn.dropdown-toggle.btn-light.is-invalid
+{
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+#registerFoto-error 
+{
+    position: relative;
+    top: 130px;
+    text-align: center;
+    padding: 10px;
+}
+
+#registerAceptarRegistro-error
+{
+    position: absolute;
+    margin-top: -8px;
+    font-size: 0.96em;
+    font-weight: 400;
+    font-family: 'Klavika';
+}
+
+#registerOrganiacionCiudadana-error, #registerPoblacionDiferencial-error
+{
+    position: absolute;
+    display: block;
+    top: 33px;
+    font-size: 0.96em;
+    font-weight: 400;
+    font-family: 'Klavika';
+}
+
+.modal-register
+{
+    --bs-modal-width: 80%;
+}
+
+.photoRegister
+{
+    width: 200px;
+    height: 200px;
+    display: block;
+    position: relative;
+    border: 1.5px solid var(--tertiary);
+    border-radius: 8px;
+    margin: auto;
+}
+
+.photoRegister::after
+{
+    content: "Haga click aqui para cargar tu foto";
+    color: #c2c2c2;
+    margin: 5px;
+    bottom: 10px;
+    position: absolute;
+    text-align: center;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid
+{
+    background-image: none !important;
+}
+
+input.wpcf7-form-control-password
+{
+    font-family: 'Klavika';
+    border: solid 2px;
+    -webkit-border-radius: 3em;
+    -moz-border-radius: 3em;
+    border-radius: 3em;
+    font-size: 0.8em;
+}
+
+input.wpcf7-form-control-password
+{
+    border-color: var(--primary);
+}
+
+input.wpcf7-login
+{
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--tertiary);
+    text-transform: none;
+    display: inline;
+    margin: auto !important;
+    width: 100%;
+
+    font-size: 1em;
+    font-family: 'Klavika';
+    font-weight: 500;
+}
+
+.wpcf7-login
+{
+    font-size: 1em;
+    background-color: var(--secondary);
+    font-family: 'Klavika';
+    color: var(--tertiary);
+    font-weight: 500;
+    -webkit-border-radius: 3em;
+    -moz-border-radius: 3em;
+    border-radius: 3em;
+}
+
+.wpcf7-login:disabled
+{
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.wpcf7-login:hover
+{
+    background-color: var(--tertiary);
+    color: #FFFFFF;
+}
+
+.login-links a
+{
+    color: var(--tertiary);
+    font-family: 'Klavika';
+    font-weight: 400;
+    font-size: 1.138em;
+    line-height: 1.25;
+    text-align: center;
+    display: block;
+}
+
+.login-links a:hover, .login-links a:active
+{
+  color: var(--primary) !important;
+}
+
+#image-preview {
+    width: 200px;
+    height: 200px;
+    display: block;
+    position: relative;
+    border: 1.5px solid var(--tertiary);
+    border-radius: 8px;
+    margin: auto;
+}
+#image-preview input {
+  line-height: 200px;
+  font-size: 200px;
+  position: absolute;
+  opacity: 0;
+  z-index: 10;
+}
+#image-preview label {
+  position: absolute;
+  z-index: 5;
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #bdc3c7;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+}
+
+@media (min-width:2000px)
+{
+    .modal-register
+    {
+        --bs-modal-width: 50%;
+    }
+}

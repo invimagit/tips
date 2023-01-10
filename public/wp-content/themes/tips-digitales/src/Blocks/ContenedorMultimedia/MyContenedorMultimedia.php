@@ -3,6 +3,9 @@ if (!defined('ABSPATH')) { exit; }
 
 class MyContenedorMultimedia
 {
+    private $name       = 'ModalMultimedia';
+    private $slug       = 'modal-multimedia';
+
     public function __construct()
     {
     }
@@ -13,21 +16,18 @@ class MyContenedorMultimedia
         $this->acf_fields_theme();
     }
 
-    private function init_actions()
+    public function init_actions()
     {
     }
 
-    public function enqueue_block_style()
+    public function get_name()
     {
+        return $this->name;
     }
 
-    private function enqueue_block_scripts()
+    public function get_slug()
     {
-    }
-
-    public function getView()
-    {
-        get_template_part( 'src/ContenedorMultimedia/views/content', 'ContenedorMultimedia' );
+        return $this->slug;
     }
 
     public function acf_fields_theme()
@@ -51,7 +51,7 @@ class MyContenedorMultimedia
                             'class' => '',
                             'id' => '',
                         ),
-                        'layout' => 'block',
+                        'layout' => 'row',
                         'sub_fields' => array(
                             array(
                                 'key' => 'field_6384b7d2ca028',
@@ -130,11 +130,11 @@ class MyContenedorMultimedia
                                 'maxlength' => '',
                             ),
                             array(
-                                'key' => 'field_6384ba598ef09',
-                                'label' => 'URL Video de Youtube',
-                                'name' => 'contenedor_youtube',
-                                'type' => 'oembed',
-                                'instructions' => 'Ingresa la URL del video de Youtube',
+                                'key' => 'field_638e111845851',
+                                'label' => 'Insertar video de Youtube?',
+                                'name' => 'insertar_video_de_youtube',
+                                'type' => 'button_group',
+                                'instructions' => 'Selecciona "Si" para insertar un video de Youtube',
                                 'required' => 1,
                                 'conditional_logic' => array(
                                     array(
@@ -150,8 +150,66 @@ class MyContenedorMultimedia
                                     'class' => '',
                                     'id' => '',
                                 ),
+                                'choices' => array(
+                                    'si' => 'Si',
+                                    'no' => 'No',
+                                ),
+                                'allow_null' => 0,
+                                'default_value' => 'no',
+                                'layout' => 'horizontal',
+                                'return_format' => 'value',
+                            ),
+                            array(
+                                'key' => 'field_6384ba598ef09',
+                                'label' => 'URL Video de Youtube',
+                                'name' => 'contenedor_youtube',
+                                'type' => 'oembed',
+                                'instructions' => 'Ingresa la URL del video de Youtube',
+                                'required' => 1,
+                                'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'field_638e111845851',
+                                            'operator' => '==',
+                                            'value' => 'si',
+                                        ),
+                                    ),
+                                ),
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
                                 'width' => '',
                                 'height' => 300,
+                            ),
+
+                            array(
+                                'key' => 'field_6382228d445853',
+                                'label' => 'Subir video',
+                                'name' => 'subir_video',
+                                'type' => 'file',
+                                'instructions' => 'Seleccione el video a subir',
+                                'required' => 1,
+                                'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'field_638e111845851',
+                                            'operator' => '==',
+                                            'value' => 'no',
+                                        ),
+                                    ),
+                                ),
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'return_format' => 'url',
+                                'library' => 'uploadedTo',
+                                'min_size' => '',
+                                'max_size' => '',
+                                'mime_types' => 'mp4,mpeg4,mpeg,mpg',
                             ),
                         ),
                     ),

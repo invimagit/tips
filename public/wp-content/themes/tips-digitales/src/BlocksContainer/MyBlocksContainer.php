@@ -21,8 +21,34 @@ class MyBlocksContainer
         switch ($layout)
         {
             case 'ContenedorMultimedia':
-                get_template_part('src/Blocks/ContenedorMultimedia/views/content', 'contenedormultimedia');
+                get_template_part('src/Blocks/ContenedorMultimedia/views/content', 'contenedor-multimedia');
                 break;
+
+            case 'ContenedorFormulario':
+                get_template_part('src/Blocks/ContenedorFormulario/views/content', 'contenedor-formulario');
+                break;
+
+            case 'Login':
+                get_template_part('src/Blocks/ContenedorLoginRegister/views/content', 'contenedor-login');
+                break;
+
+            case 'Register':
+                get_template_part('src/Blocks/ContenedorLoginRegister/views/content', 'contenedor-register');
+                break;
+
+            case 'RecoverPass':
+                get_template_part('src/Blocks/ContenedorLoginRegister/views/content', 'contenedor-recover-pass');
+                break;
+
+            case 'Secciones':
+                get_template_part('src/PostTypes/Secciones/views/content', 'secciones');
+                break;
+
+            case 'Cursos':
+                get_template_part('src/PostTypes/Cursos/views/content', 'cursos');
+                break;
+
+
 /*
             case 'featured_16_9_block':
                 if (!is_single()){

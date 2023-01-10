@@ -1,0 +1,49 @@
+{
+  "Combiner_CSS":{
+    //CSS Plantilla
+    combine:"../public/css/style.css",
+
+    //CSS Utilidades
+    combine:"../public/css/HoldOn.min.css",
+    combine:"../public/css/sweetalert2.min.css",
+    combine:"../public/css/bootstrap-datepicker.css",
+    combine:"../public/css/bootstrap-multiselect.css",
+
+    //CSS Blocks
+    combine:"../src/Blocks/ContenedorFormulario/assets/css/modal-formulario.css",
+    combine:"../src/Blocks/ContenedorMultimedia/assets/css/modal-multimedia.css",
+    combine:"../src/Blocks/ContenedorLoginRegister/assets/css/login-register.css",
+
+    //CSS PostTypes
+    combine:"../src/PostTypes/Cursos/assets/css/cursos.css",
+    combine:"../src/PostTypes/Secciones/assets/css/secciones.css",
+
+    //CSS Output
+    output:"../public/css/styles.css"
+  },
+
+  "Combiner_JS":{
+    //JS Plantilla
+    combine:"../public/js/script.js",
+
+    //JS Utilidades
+    combine:"../public/js/HoldOn.min.js",
+    combine:"../public/js/sweetalert2.min.js",
+    combine:"../public/js/jquery.validate.js",
+    combine:"../public/js/bootstrap-multiselect.js",
+    combine:"../public/js/bootstrap-datepicker.js",
+    combine:"../public/js/bootstrap-datepicker.es.min.js",
+    combine:"../public/js/jquery.uploadPreview.js",
+
+    //JS Blocks
+    combine:"../src/Blocks/ContenedorFormulario/assets/js/modal-formulario.js",
+    combine:"../src/Blocks/ContenedorMultimedia/assets/js/modal-multimedia.js",
+    combine:"../src/Blocks/ContenedorLoginRegister/assets/js/login-register.js",
+
+    //JS PostTypes
+
+    //JS Output
+    output:"../public/js/scripts.js"
+  },
+}
+

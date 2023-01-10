@@ -20,10 +20,20 @@
 <?php
     require_once(SRC_PATH . 'BlocksContainer/MyBlocksContainer.php');
 
-    $cm = new MyBlocksContainer();
-    $cm->views_blocks_container('ContenedorMultimedia');
-?>
+    $container = new MyBlocksContainer();
 
+    if(is_home() || is_front_page())
+        $container->views_blocks_container('ContenedorMultimedia');
+
+    if(is_singular('cursos'))
+        $container->views_blocks_container('ContenedorFormulario');
+
+    if(is_page('iniciar-sesion'))
+    {
+        $container->views_blocks_container('Register');
+        $container->views_blocks_container('RecoverPass');
+    }
+?>
 
 </body>
 </html>
