@@ -29,7 +29,7 @@ define( 'DB_USER', 'user_t1ps' );
 define( 'DB_PASSWORD', ')YCW5m$zcXvUj&-K' );
 
 /** Database hostname */
-define( 'DB_HOST', '172.30.166.114' );
+define( 'DB_HOST', '172.30.32.63' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -92,3 +92,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+
+/*
+define( 'DB_NAME', 'tips_digital' );
+
+define( 'DB_USER', 'user_t1ps' );
+
+define( 'DB_PASSWORD', ')YCW5m$zcXvUj&-K' );
+
+define( 'DB_HOST', '172.30.166.114' );
+*/
