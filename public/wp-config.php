@@ -29,7 +29,7 @@ define( 'DB_USER', 'user_t1ps' );
 define( 'DB_PASSWORD', ')YCW5m$zcXvUj&-K' );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '172.30.166.114' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -64,7 +64,7 @@ define('NONCE_SALT',       'Tx J,L+ok.%7zcp)I&L]mz!lD%of-Nf[+ae*GcS?8IoBIk.H9;Rv
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = 'tips_';
+$table_prefix = 't1ps_';
 
 /**
  * For developers: WordPress debugging mode.
