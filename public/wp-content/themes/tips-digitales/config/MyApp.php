@@ -319,7 +319,7 @@ class MyApp
     private function register_actions_init()
     {
         //Remove redirect
-        add_action( 'wp', array($this, 'add_login_check'));
+        //add_action( 'wp', array($this, 'add_login_check'));
 
         add_action( 'admin_init', array($this, 'block_wp_admin_to_subscribers'));
         add_action( 'login_head', array($this, 'change_login_wp_image'));

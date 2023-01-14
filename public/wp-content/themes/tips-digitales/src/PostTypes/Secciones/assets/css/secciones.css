@@ -221,3 +221,72 @@ button.list-group-item:hover
     color: #fff!important;
     border: 2px solid var(--tertiary);
 }
+
+.img-target{
+    width: 200px;
+    height: 200px;
+    border: 1px gray solid;
+    border-radius: 10px;
+    margin: auto;
+    display: block;
+}
+
+.carousel-control-next-icon{
+    background-color: #28446b !important;
+    border-radius: 15%;
+    background-position: 63%;
+    background-size: 66% 56%;
+    font-weight: bold;
+    position: relative;
+    right: -68%;
+    width: 32px !important;
+}
+
+.carousel-control-prev-icon{
+    background-color: #28446b !important;
+    border-radius: 15%;
+    background-position: 34%;
+    background-size: 66% 56%;
+    font-weight: bold;
+    position: relative;
+    left: -46%;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: auto;
+}
+
+.hrParticipantes {
+    background-color: var(--tertiary);
+    border: 1px solid;
+}
+
+.point{
+    width: 7px;
+    height: 7px;
+    display: flex;
+    background-color: #1da0cc;
+    border-radius: 15px;
+    position: relative;
+    top: 30px;
+    left: -15px;
+}
+
+.title-participantes{
+    color: var(--tertiary);
+    font-family: 'Klavika';
+    font-weight: 500;
+    font-size: 1.2em;
+    letter-spacing: -2px;
+    margin-top: -12px;
+}
+
+.descripcion-participantes
+{
+    color: var(--tertiary);
+    font-family: 'Klavika';
+    font-weight: 400;
+    font-size: 0.9em;
+    line-height: 1.25;
+    height: 40px;
+}
