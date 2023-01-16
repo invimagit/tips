@@ -1082,8 +1082,11 @@ button.slick-next.slick-arrow
     border-radius: 15%;
     background-position: 63%;
     background-size: 66% 56%;
-    font-weight: 700;
-  }
+    right: 0px;
+    top: 40%;
+    width: 32px;
+    z-index: 10;
+}
 
 button.slick-prev.slick-arrow
 {
@@ -1091,81 +1094,69 @@ button.slick-prev.slick-arrow
     border-radius: 15%;
     background-position: 34%;
     background-size: 66% 56%;
-    font-weight: 700;
+    left: 0px;
+    top: 40%;
+    width: 32px;
+    z-index: 10;
 }
 
-.slick-next, .slick-prev {
-    font-size: 0;
-    line-height: 0;
-
-    position: absolute;
-    top: 42%;
-
-    display: block;
-
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-
-    cursor: pointer;
-    z-index: 10;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-  }
-
+/* Arrows */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 32px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
 .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
-.slick-next:focus
-{
-    color: transparent;
-    outline: none;
-    background: transparent;
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: transparent;
 }
-
 .slick-prev:hover:before,
 .slick-prev:focus:before,
 .slick-next:hover:before,
-.slick-next:focus:before
-{
-    opacity: 1;
+.slick-next:focus:before {
+  opacity: 1;
 }
 .slick-prev.slick-disabled:before,
-.slick-next.slick-disabled:before
-{
-    opacity: .25;
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
 }
-
 .slick-prev:before,
-.slick-next:before
-{
-    font-size: 20px;
-    line-height: 1;
-
-    opacity: .75;
-    color: white;
-    margin: 0px 10px;
+.slick-next:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: #FFF;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.slick-prev
-{
-    left: -12px;
+.slick-prev {
+  left: -40px;
 }
-.slick-prev:before
-{
-    content: '<';
+.slick-prev:before {
+  content: "\f104";
 }
-
-.slick-next
-{
-    right: -12px;
+.slick-next {
+  right: -40px;
 }
-.slick-next:before
-{
-    content: '>';
+.slick-next:before {
+  content: "\f105";
 }

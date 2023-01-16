@@ -319,7 +319,7 @@ class MyApp
     private function register_actions_init()
     {
         //Remove redirect
-        //add_action( 'wp', array($this, 'add_login_check'));
+        add_action( 'wp', array($this, 'add_login_check'));
 
         add_action( 'admin_init', array($this, 'block_wp_admin_to_subscribers'));
         add_action( 'login_head', array($this, 'change_login_wp_image'));
@@ -462,7 +462,7 @@ class MyApp
 
             wp_enqueue_style( 'style', ASSETS_PUBLIC_PATH . 'css/styles.min.css', array(), APP_VERSION );
 
-            wp_deregister_style( 'dashicons' ); 
+            wp_deregister_style( 'dashicons' );
         }
     }
 
@@ -487,6 +487,20 @@ class MyApp
             {
                 wp_dequeue_script( 'contact-form-7' );
                 wp_dequeue_style( 'contact-form-7' );
+            }
+
+            if(is_single('conoce-al-equipo-de-participacion'))
+            {
+                /*
+                wp_register_script('html2canvas', ASSETS_PUBLIC_PATH . 'js/html2canvas.min.js', array(), APP_VERSION, true );
+                wp_enqueue_script('html2canvas');
+
+                wp_register_script('jspdf', ASSETS_PUBLIC_PATH . 'js/jspdf.min.js', array(), APP_VERSION, true );
+                wp_enqueue_script('jspdf');
+                */
+
+                wp_register_script('exportPDF', ASSETS_PUBLIC_PATH . 'js/exportPDF.js', array(), APP_VERSION, true );
+                wp_enqueue_script('exportPDF');
             }
         }
         else

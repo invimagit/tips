@@ -1,4 +1,4 @@
-(function ($) {
+(function($){
   $.extend({
     uploadPreview : function (options) {
 

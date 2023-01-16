@@ -2,19 +2,19 @@
 
 ?>
     <div class="container-fluid">
-        <div class="row py-5 m-2 border-container-cursos">
+        <div class="row mx-3 my-5">
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3">
-                <div class="title-cursos-icon px-md-5 px-2">
+                <div class="title-cursos-icon px-md-4 px-2">
                     <span class="iconWaterBlue"></span>
                     <span class="iconWater"></span>
                 </div>
 
-                <h1 class="title-cursos px-md-5 px-2"><?php echo get_the_title(); ?></h1>
-                <div class="descripcion-cursos pt-3 px-md-5 px-2">
+                <h1 class="title-cursos px-md-4 px-2"><?php echo get_the_title(); ?></h1>
+                <div class="descripcion-cursos pt-3 px-md-4 px-2">
                     <?php echo get_field('descripcion', get_the_ID()); ?>
                 </div>
 
-                <div class="px-md-5 my-3 mx-md-4 mx-2">
+                <div class="px-md-4 my-3 mx-md-4 mx-2">
                     <div class="mb-2 accordion" id="accordion_a_quien_va_dirigido_el_curso">
                         <div class="accordion-item p-0">
                             <?php
@@ -61,7 +61,7 @@
                     </div>
                 </div>
 
-                <div class="px-md-5 my-3 mx-md-4 mx-2">
+                <div class="px-md-4 my-3 mx-md-4 mx-2">
                     <div class="mb-2 accordion" id="accordion_a_quien_va_dirigido_el_curso">
                         <div class="accordion-item p-0">
                             <?php
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row px-md-5 px-2 mt-5">
+                <div class="row px-md-4 px-2 mt-5">
                     <?php
                         // check if the flexible content field has rows of data
                         if( have_rows('contenedor_botones', get_the_ID()) ):
@@ -165,7 +165,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3">
                 <div class="row">
-                    <div class="col-12 px-md-5 px-4">
+                    <div class="col-12 px-md-4 px-4">
                         <div class="col-md-12 col-sm-12 cursos-imagenes">
                             <img src="<?php echo get_field('imagen_curso', get_the_ID()); ?>" class="img-fluid">
                         </div>

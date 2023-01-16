@@ -1,4 +1,4 @@
-<div class="col-lg-6 col-xxl-3 col-12 pb-3 accordion" id="accordion_<?php echo $args['ID']; ?>">
+<div class="col-xxl-3 col-lg-4 col-12 pb-3 accordion" id="accordion_<?php echo $args['ID']; ?>">
   <div class="accordion-item p-0">
     <div class="accordion-header datos-curso-accordion" id="">
       <button class="accordion-button-participantes accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $args['ID']; ?>" aria-expanded="false" aria-controls="collapse<?php echo $args['ID']; ?>">

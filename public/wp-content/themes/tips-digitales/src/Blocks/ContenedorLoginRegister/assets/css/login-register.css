@@ -197,6 +197,7 @@ input.wpcf7-login
   position: absolute;
   opacity: 0;
   z-index: 10;
+  width: 200px;
 }
 #image-preview label {
   position: absolute;

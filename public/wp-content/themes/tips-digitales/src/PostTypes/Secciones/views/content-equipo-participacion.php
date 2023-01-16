@@ -1,10 +1,10 @@
 <?php
-  $contBloques = 1;
+
 ?>
 <div class="container-fluid">
   <div class="row mx-3 my-2">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-3">
-      <div class="row mb-3 px-md-5 px-4 pb-3">
+      <div class="row mb-3 px-md-4 px-4 pb-3">
         <?php
           if( have_rows('equipos', get_the_ID()) ):
             $cont = 1;

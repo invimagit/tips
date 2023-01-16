@@ -101,9 +101,9 @@
 
 
 .border-container-secciones{
-    border-top: 7px solid #dbdce1;
-    border-left: 7px solid #dbdce1;
-    border-top-left-radius: 40px;
+    border: 7px solid #dbdce1;
+    border-radius: 40px;
+    margin: 0px 2% 20px;
 }
 
 .secciones-video video, .secciones-video iframe, .rll-youtube-player
@@ -207,7 +207,7 @@ button.list-group-item:hover
 {
     height: 20px;
     color: var(--tertiary) !important;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Klavika';
     font-weight: 400;
     border: 2px solid var(--secondary);
@@ -289,4 +289,188 @@ button.list-group-item:hover
     font-size: 0.9em;
     line-height: 1.25;
     height: 40px;
+}
+
+
+/*Timeline*/
+
+
+.container-timeline {
+    width: 100%;
+    display: block;
+    border: 1.4px solid var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border-radius: 18px;
+    box-shadow: 5px 4px #d3d0d0;
+}
+
+.timeline-carousel {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+    display: block;
+    height: 61px;
+  }
+  
+  .timeline-carousel {
+    float: left;    
+    text-align: center;
+    position: relative;  
+  }
+  
+.slick-current.timeline-carousel-bullet::before {
+  height: 16px;
+  width: 16px;
+  margin-top: -1px;
+  margin-left: -9px; /* Center bullet - Half .slick-current width*/
+  border: 5px solid magenta;
+}
+
+    .timeline-carousel-bullet:before
+    {
+    content: '';
+    counter-increment: step;
+    line-height: 20px;
+    width: 15px;
+    height: 15px;
+    display: block;
+    border-radius: 100%;
+    border: 1px solid #CCC;
+    margin: 0 auto 15px auto;
+    background: #fff;
+    cursor: pointer;
+    top: 96px;
+}
+.timeline-carousel-bullet:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #DDD;
+    display: block;
+    position: absolute;
+    top: 101.5px;
+    left: 50%;
+    z-index: -1;
+}
+  .timeline-carousel .active{
+    background-color: red;
+  }
+  
+  .timeline-carousel-bullet:last-child:after {
+    content: none;
+  }
+  
+  .timeline-carousel-bullet .active {
+    color: var(--tertiary);
+  }
+  
+  .timeline-carousel-bullet .active::before {
+    background: var(--tertiary);
+  }
+  
+  .timeline-carousel-bullet:first-child:before {
+    border-color: var(--tertiary);
+    content: "\2B9C";
+    width: 20px;
+    height: 20px;
+    border: 0;
+    top: 89.3px;
+    position: relative;
+    left: -8px;
+    background-color: var(--tertiary);
+    border-radius: 5px;
+    color: white;
+  }
+  .timeline-carousel-bullet:last-child:before {
+    border-color: var(--tertiary);
+    content: "\2B9E";
+    width: 20px;
+    height: 20px;
+    border: 0;
+    top:  91.3px;
+    position: relative;
+    left: -8px;
+    background-color: var(--tertiary);
+    border-radius: 5px;
+    color: white;
+
+  
+  }
+  .timeline-carousel-bullet:first-child:after {
+    background: var(--tertiary);  
+  }
+
+  .timeline-carousel-bullet:first-child:after{
+    background: var(--tertiary);  
+  }
+
+  
+.titleIcon-timeline {
+    left: 14px;
+    position: absolute;
+    top: -11px;
+    margin-right: 50px;
+}
+
+.timeline-carousel-info
+{
+    text-align: center;
+}
+
+.timeline-carousel {
+  background: var(--tertiary);
+  height: 1px;
+  border-radius: 100px;
+  justify-content: space-around;
+}
+
+
+.fecha-timeline{
+    position: relative;
+    left: 20px;
+}
+
+.fecha-timeline-text{
+    margin-left: 40px;
+    color: var(--tertiary);
+    font-family: Klavika;
+    font-weight: 400;
+    font-size: 1.138em;
+    line-height: 1.25;
+}
+
+.fecha-timeline-text::first-letter {
+ text-transform: uppercase;
+}
+
+.descripcion-timeline{
+    color: var(--tertiary);
+    top: 15px;
+    display: block;
+    position: relative;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 14px;
+    min-height: 113px;
+}
+
+.box-timeline{
+    width: 100%;
+    height: 255px;
+    overflow: hidden;
+}
+
+.slickItem-timeline
+{
+    height: 200px;
+    padding: 30px 0px;
+}
+
+.exportCanvas
+{
+    display: none;
 }

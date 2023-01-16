@@ -2,18 +2,18 @@
 
 ?>
     <div class="container-fluid">
-        <div class="row py-5 m-2 border-container-secciones">
+        <div class="row mx-3 my-5">
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3">
-                <div class="title-secciones-icon px-md-5 px-2">
+                <div class="title-secciones-icon px-md-4 px-2">
                     <span class="iconWaterBlue"></span>
                     <span class="iconWater"></span>
                 </div>
 
-                <h1 class="title-secciones px-md-5 px-2"><?php echo get_the_title(); ?></h1>
-                <div class="descripcion-secciones pt-3 px-md-5 px-2">
+                <h1 class="title-secciones px-md-4 px-2"><?php echo get_the_title(); ?></h1>
+                <div class="descripcion-secciones pt-3 px-md-4 px-2">
                     <?php echo get_field('descripcion', get_the_ID()); ?>
                 </div>
-                <div class="row px-md-5 px-2 mt-5">
+                <div class="row px-md-4 px-2 mt-5">
                     <?php
                         // check if the flexible content field has rows of data
                         if( have_rows('contenedor_botones', get_the_ID()) ):
@@ -71,22 +71,22 @@
                 <?php
                     if(get_field('agregar_video', get_the_ID()) == "si"):
                 ?>
-                        <div class="row px-md-5 px-lg-2 px-2">
+                        <div class="row px-md-4 px-lg-2 px-2">
 
-                        <div class="secciones-video col-md-12 col-sm-12">
-                            <?php
-                                if(get_field('insertar_video_de_youtube', get_the_ID()) == "si"):
-                                    echo get_field('video_youtube', get_the_ID());
-                                else:
-                            ?>
-                                    <video width="w-100" style="border-radius: 15px;" controls preload controls>
-                                        <source src="<?php echo get_field('subir_video', get_the_ID()); ?>" type="video/mp4">
-                                    </video>
-                            <?php
-                                endif;
-                            ?>
+                            <div class="secciones-video col-md-12 col-sm-12">
+                                <?php
+                                    if(get_field('insertar_video_de_youtube', get_the_ID()) == "si"):
+                                        echo get_field('video_youtube', get_the_ID());
+                                    else:
+                                ?>
+                                        <video width="w-100" style="border-radius: 15px;" controls preload controls>
+                                            <source src="<?php echo get_field('subir_video', get_the_ID()); ?>" type="video/mp4">
+                                        </video>
+                                <?php
+                                    endif;
+                                ?>
+                            </div>
                         </div>
-                    </div>
                 <?php
                     endif;
                 ?>
@@ -94,7 +94,7 @@
                 <?php
                     if(get_field('agregar_imagenes_cursos', get_the_ID()) == "si"):
                 ?>
-                        <div class="row px-md-5 px-lg-2 px-2">
+                        <div class="row px-md-4 px-lg-2 px-2">
                             <?php
                                 // check if the flexible content field has rows of data
                                 if( have_rows('imagenes', get_the_ID()) ):
@@ -131,4 +131,9 @@
 <?php
     if(get_field('agregar_equipo', get_the_ID()) == 'si')
         get_template_part('src/PostTypes/Secciones/views/content', 'equipo-participacion');
+?>
+
+<?php
+    if(get_field('agregar_timeline', get_the_ID()) == 'si')
+        get_template_part('src/PostTypes/Secciones/views/content', 'timeline');
 ?>

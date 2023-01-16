@@ -9,7 +9,6 @@
     combine:"../public/css/bootstrap-datepicker.css",
     combine:"../public/css/bootstrap-multiselect.css",
     combine:"../public/css/slick.css",
-    combine:"../public/css/slick-theme.css",
 
     //CSS Blocks
     combine:"../src/Blocks/ContenedorFormulario/assets/css/modal-formulario.css",

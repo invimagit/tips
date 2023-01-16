@@ -1,17 +1,17 @@
     <div class="container-fluid">
-        <div class="row py-5 m-2 border-container-secciones">
+        <div class="row mx-3 my-5">
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3">
-                <div class="title-secciones-icon px-md-5 px-2">
+                <div class="title-secciones-icon px-md-4 px-2">
                     <span class="iconWaterBlue"></span>
                     <span class="iconWater"></span>
                 </div>
 
-                <h1 class="title-secciones px-md-5 px-2"><?php echo get_the_title(); ?></h1>
-                <div class="descripcion-secciones pt-3 px-md-5 px-2">
+                <h1 class="title-secciones px-md-4 px-2"><?php echo get_the_title(); ?></h1>
+                <div class="descripcion-secciones pt-3 px-md-4 px-2">
                     <?php echo get_field('descripcion', get_the_ID()); ?>
                 </div>
 
-                <div class="pt-3 px-md-5 px-2">
+                <div class="pt-3 px-md-4 px-2">
                     <form action="" data-toggle="validator" enctype="multipart/form-data" class="wpcf7-form" id="loginForm" method="post" novalidate="novalidate">
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12">
@@ -49,14 +49,14 @@
                     </form>
                 </div>
 
-                <div class="login-links px-md-5 px-2">
+                <div class="login-links px-md-4 px-2">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#modalRecoverPass">Olvidé mi contraseña</a>
                 </div>
-                <div class="login-links pt-2 px-md-5 px-2">
+                <div class="login-links pt-2 px-md-4 px-2">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#modalRegister">Crear mi usuario</a>
                 </div>
 
-                <div class="row px-md-5 px-2 mt-5">
+                <div class="row px-md-4 px-2 mt-5">
                     <?php
                         // check if the flexible content field has rows of data
                         if( have_rows('contenedor_botones', get_the_ID()) ):

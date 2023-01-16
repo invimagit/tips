@@ -16,9 +16,7 @@ class MyContenedorLoginRegister
         $this->init_filters();
 
         $this->acf_fields_login_page();
-
         $this->acf_fields_theme();
-
     }
 
     public function init_actions()
