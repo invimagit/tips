@@ -53,38 +53,48 @@ jQuery(document).ready(function($)
 		$(this).find('.multi-item-carousel').css('opacity', 0);
   });
 
-  $(".timeline-carousel").slick(
+  $(".timeline").slick(
   {
     centerMode: true,
+    centerPadding: '30px',
     dots: false,
     infinite: false,
     arrows: true,
     speed: 300,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     focusOnSelect: true,
-    asNavFor: ".timeline-carousel-info"
+    responsive:
+    [
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   });
 
-  $(".timeline-carousel-info").slick(
-  {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    draggable: false,
-    asNavFor: ".timeline-carousel"
-  });
-
-  $(".timeline-carousel").slick('setPosition');
-  $(".timeline-carousel").slick('slickGoTo', 1);
-
-  $('.timeline-carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide)
-  {
-    console.log(nextSlide, currentSlide);
-    if (nextSlide === 0 || currentSlide === 0)
-    {
-      $(this).slick('slickPause');
-    };
-  });
 });

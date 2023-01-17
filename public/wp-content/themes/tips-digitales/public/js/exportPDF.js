@@ -1,5 +1,5 @@
-  if(typeof jsPDF !== 'undefined')
-  {
+  //if(typeof jsPDF !== 'undefined')
+  //{
     var specialElementHandlers =
     {
         '.no-export': function (element, renderer)
@@ -40,4 +40,4 @@
         });
 */
     }
-  }
+  //}

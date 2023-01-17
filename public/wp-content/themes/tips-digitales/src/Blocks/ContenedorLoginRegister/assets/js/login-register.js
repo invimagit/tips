@@ -116,7 +116,7 @@ jQuery(document).ready(function ($)
           {
             if(data.type == 'success')
             {
-              window.location = data.redirectURL;
+              jQuery(location).attr('href', data.redirectURL);
             }
             else
             {
