@@ -203,6 +203,23 @@ button.list-group-item:hover
     color: var(--tertiary);
 }
 
+.accordion-type-select
+{
+    position: relative;
+    width: 100%;
+}
+
+.accordion-type-select .accordion-collapse
+{
+    position: absolute;
+    width: 100%;
+    background: #FFF;
+    z-index: 1;
+    border-bottom: 2px solid var(--tertiary);
+    border-left: 2px solid var(--tertiary);
+    border-right: 2px solid var(--tertiary);
+}
+
 .accordion-button-participantes
 {
     height: 20px;
@@ -211,7 +228,7 @@ button.list-group-item:hover
     font-family: 'Klavika';
     font-weight: 400;
     border: 2px solid var(--secondary);
-    border-radius: 10px !important;
+    border-radius-top: 10px !important;
     background: #FFF;
 }
 
@@ -403,7 +420,7 @@ button.list-group-item:hover
     text-align: center;
     position: relative;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 1em;
     line-height: 14px;
     padding: 0px 0px 10px;
 }
@@ -419,7 +436,7 @@ button.list-group-item:hover
     margin: auto;
     position: relative;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 0.8em;
     line-height: 14px;
 }
 

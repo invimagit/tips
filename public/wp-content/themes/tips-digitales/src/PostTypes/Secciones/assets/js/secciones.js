@@ -53,6 +53,14 @@ jQuery(document).ready(function($)
 		$(this).find('.multi-item-carousel').css('opacity', 0);
   });
 
+  $(document).click(function(e)
+  {
+    if (!$(e.target).is('.panel-body'))
+    {
+        $('.collapseSelect').collapse('hide');      
+    }
+  });
+
   $(".timeline").slick(
   {
     centerMode: true,

@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="px-md-4 my-3 mx-md-4 mx-2">
-                    <div class="mb-2 accordion" id="accordion_a_quien_va_dirigido_el_curso">
+                    <div class="mb-2 accordion" id="accordion_resumen_del_curso">
                         <div class="accordion-item p-0">
                             <?php
                                 // check if the flexible content field has rows of data
@@ -90,7 +90,7 @@
                                             else
                                                 $myClass = 'my-2';
                             ?>
-                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion_a_quien_va_dirigido_el_curso">
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion_resumen_del_curso">
                                                 <div class="accordion-body accordion-descripcion-cursos <?php echo $myClass; ?> px-4">
                                                     <?php echo get_sub_field('valores', get_the_ID()); ?>
                                                 </div>

@@ -5,8 +5,8 @@
         <?php echo get_sub_field('nombre_del_equipo'); ?>
       </button>
     </div>
-    <div class="accordion-collapse-cursos">
-      <div id="collapse<?php echo $args['ID']; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion_<?php echo $args['ID']; ?>" style="">
+    <div class="accordion-type-select">
+      <div id="collapse<?php echo $args['ID']; ?>" class="accordion-collapse collapse collapseSelect" aria-labelledby="headingOne" data-bs-parent=".accordion" style="">
         <div class="accordion-body accordion-descripcion-cursos mt-3 mb-2 px-2">
 					<?php
 					    if( have_rows('dependencias') ):
