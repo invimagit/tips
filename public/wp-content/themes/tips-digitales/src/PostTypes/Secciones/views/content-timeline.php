@@ -26,6 +26,10 @@
                                         </div>
                                     </div>
 
+                                    <div class="titulo-timeline">
+                                        <?php echo get_sub_field('titulo_evento'); ?>
+                                    </div>
+
                                     <div class="descripcion-timeline">
                                         <?php echo get_sub_field('descripcion_evento'); ?>
                                     </div>

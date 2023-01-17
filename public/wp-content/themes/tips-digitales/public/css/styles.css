@@ -3030,19 +3030,32 @@ button.list-group-item:hover
     text-transform: capitalize;
 }
 
-.descripcion-timeline{
+.titulo-timeline{
+    font-family: Klavika;
     color: var(--tertiary);
     display: block;
     top: 35px;
-    width: 60%;
     text-align: center;
-    margin: auto;
-
     position: relative;
     font-weight: 500;
     font-size: 13px;
     line-height: 14px;
-    min-height: 113px;
+    padding: 0px 0px 10px;
+}
+
+.descripcion-timeline{
+    font-family: Klavika;
+    color: var(--tertiary);
+    display: block;
+    top: 35px;
+    width: 60%;
+    height: 160px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -3084,8 +3097,7 @@ button.list-group-item:hover
 
 .box-timeline{
     width: 100%;
-    /* overflow-x: scroll; */
-    height: 255px;
+    height: 300px;
     overflow-y: hidden;
 }
 
@@ -3098,7 +3110,7 @@ button.list-group-item:hover
     right: 0px;
     top: 100px;
     width: 32px;
-    z-index: 10;
+    z-index: 1;
 }
 
 .timeline button.slick-prev.slick-arrow
@@ -3110,7 +3122,7 @@ button.list-group-item:hover
     left: 0px;
     top: 100px;
     width: 32px;
-    z-index: 10;
+    z-index: 1;
 }
 
 /* Arrows */
@@ -3186,12 +3198,16 @@ button.list-group-item:hover
         opacity: 0;
     }
 
+    .box-timeline {
+        height: 400px;
+    }
+
     .descripcion-timeline
     {
         top: 35px;
         text-align: center;
-        width: 80%;
-
+        width: 100%;
+        height: 340px;
     }
 }
 
@@ -3207,12 +3223,17 @@ button.list-group-item:hover
         opacity: 0.45;
     }
 
+    .box-timeline {
+        height: 320px;
+    }
+
+
     .descripcion-timeline
     {
         top: 35px;
         text-align: center;
-        width: 80%;
-
+        width: 100%;
+        height: 320px;
     }
 }
 
@@ -3227,8 +3248,8 @@ button.list-group-item:hover
     {
         top: 35px;
         text-align: center;
-        width: 80%;
-
+        width: 100%;
+        height: 320px;
     }
 }
 
@@ -3243,12 +3264,13 @@ button.list-group-item:hover
     {
         top: 35px;
         text-align: center;
-        width: 80%;
+        width: 100%;
+        height: 240px;
     }
 }
 
 @media (min-width:480px)
-{  
+{
     .fecha-timeline
     {
         left: 12%;
@@ -3258,6 +3280,8 @@ button.list-group-item:hover
     {
         top: 35px;
         text-align: center;
+        width: 80%;
+        height: 200px;
     }
 }
 
@@ -3305,7 +3329,12 @@ button.list-group-item:hover
 }
 
 @media (min-width:768px)
-{  
+{
+    .box-timeline
+    {
+        height: 280px;
+    }
+
     .fecha-timeline
     {
         left: 32%;
