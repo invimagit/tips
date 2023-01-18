@@ -184,6 +184,9 @@ class MyApp
         //Register blocks
         $this->contenedor_multimedia_init();
         $this->contenedor_formulario_init();
+        $this->contenedor_timeline_init();
+        $this->contenedor_dependencias_init();
+
         $this->contenedor_login_register_init();
     }
 
@@ -252,6 +255,22 @@ class MyApp
         require_once(SRC_PATH . 'Blocks/ContenedorFormulario/MyContenedorFormulario.php');
 
         $block = new MyContenedorFormulario();
+        $block->init();
+    }
+
+    private function contenedor_dependencias_init()
+    {
+        require_once(SRC_PATH . 'Blocks/ContenedorDependencias/MyContenedorDependencias.php');
+
+        $block = new MyContenedorDependencias();
+        $block->init();
+    }
+
+    private function contenedor_timeline_init()
+    {
+        require_once(SRC_PATH . 'Blocks/ContenedorTimeline/MyContenedorTimeline.php');
+
+        $block = new MyContenedorTimeline();
         $block->init();
     }
 

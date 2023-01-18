@@ -1,7 +1,7 @@
-<div class="col-xxl-3 col-lg-4 col-12 pb-3 accordion" id="accordion_<?php echo $args['ID']; ?>">
+<div class="col-lg-3 col-md-6 col-12 pb-3 accordion" id="accordion_<?php echo $args['ID']; ?>">
   <div class="accordion-item p-0">
     <div class="accordion-header datos-curso-accordion" id="">
-      <button class="accordion-button-participantes accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $args['ID']; ?>" aria-expanded="false" aria-controls="collapse<?php echo $args['ID']; ?>">
+      <button class="accordion-button-title accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $args['ID']; ?>" aria-expanded="false" aria-controls="collapse<?php echo $args['ID']; ?>">
         <?php echo get_sub_field('nombre_del_equipo'); ?>
       </button>
     </div>
@@ -34,7 +34,7 @@
 
       $tipo = get_sub_field('tipo_de_la_dependencia');
 
-      get_template_part('src/PostTypes/Secciones/views/content', 'dependencia-' . $tipo, array('ID' => $args['ID'] . '-' . $cont) );
+      get_template_part('src/Blocks/ContenedorDependencias/views/content', 'dependencia-' . $tipo, array('ID' => $args['ID'] . '-' . $cont) );
 
       $cont++;
     endwhile;

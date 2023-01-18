@@ -131,9 +131,12 @@
 <?php
     if(get_field('agregar_equipo', get_the_ID()) == 'si')
         get_template_part('src/PostTypes/Secciones/views/content', 'equipo-participacion');
-?>
 
-<?php
     if(get_field('agregar_timeline', get_the_ID()) == 'si')
-        get_template_part('src/PostTypes/Secciones/views/content', 'timeline');
+    {
+        require_once(SRC_PATH . 'BlocksContainer/MyBlocksContainer.php');
+        $container = new MyBlocksContainer();
+
+        $container->views_blocks_container('ContenedorTimeline');
+    }
 ?>

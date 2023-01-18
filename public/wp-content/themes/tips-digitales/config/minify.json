@@ -14,6 +14,8 @@
     combine:"../src/Blocks/ContenedorFormulario/assets/css/modal-formulario.css",
     combine:"../src/Blocks/ContenedorMultimedia/assets/css/modal-multimedia.css",
     combine:"../src/Blocks/ContenedorLoginRegister/assets/css/login-register.css",
+    combine:"../src/Blocks/ContenedorDependencias/assets/css/dependencias.css",
+    combine:"../src/Blocks/ContenedorTimeline/assets/css/timeline.css",
 
     //CSS PostTypes
     combine:"../src/PostTypes/Cursos/assets/css/cursos.css",
@@ -41,9 +43,10 @@
     combine:"../src/Blocks/ContenedorFormulario/assets/js/modal-formulario.js",
     combine:"../src/Blocks/ContenedorMultimedia/assets/js/modal-multimedia.js",
     combine:"../src/Blocks/ContenedorLoginRegister/assets/js/login-register.js",
+    combine:"../src/Blocks/ContenedorDependencias/assets/js/dependencias.js",
+    combine:"../src/Blocks/ContenedorTimeline/assets/js/timeline.js",
 
     //JS PostTypes
-    combine:"../src/PostTypes/Secciones/assets/js/secciones.js",
 
     //JS Output
     output:"../public/js/scripts.js"

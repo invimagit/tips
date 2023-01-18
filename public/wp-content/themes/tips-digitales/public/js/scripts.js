@@ -7612,6 +7612,9 @@ jQuery(document).ready(function($)
     }
   });
 
+});
+jQuery(document).ready(function($)
+{
   $(".timeline").slick(
   {
     centerMode: true,
@@ -7655,5 +7658,4 @@ jQuery(document).ready(function($)
       }
     ]
   });
-
 });

@@ -1,5 +1,6 @@
 <?php
-
+  require_once(SRC_PATH . 'BlocksContainer/MyBlocksContainer.php');
+  $container = new MyBlocksContainer();
 ?>
 <div class="container-fluid">
   <div class="row mx-3 my-2">
@@ -9,7 +10,7 @@
           if( have_rows('equipos', get_the_ID()) ):
             $cont = 1;
             while ( have_rows('equipos', get_the_ID()) ) : the_row();
-              get_template_part('src/PostTypes/Secciones/views/content', 'accordeon',array('ID' => $cont) );
+              $container->views_blocks_container('ContenedorDependencias', array('ID' => $cont));
               $cont++;
             endwhile;
           else :

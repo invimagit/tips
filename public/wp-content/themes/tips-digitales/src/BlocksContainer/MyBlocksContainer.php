@@ -28,6 +28,14 @@ class MyBlocksContainer
                 get_template_part('src/Blocks/ContenedorFormulario/views/content', 'contenedor-formulario');
                 break;
 
+            case 'ContenedorTimeline':
+                get_template_part('src/Blocks/ContenedorTimeline/views/content', 'contenedor-timeline');
+                break;
+
+            case 'ContenedorDependencias':
+                get_template_part('src/Blocks/ContenedorDependencias/views/content', 'contenedor-dependencias', $args);
+                break;
+
             case 'Login':
                 get_template_part('src/Blocks/ContenedorLoginRegister/views/content', 'contenedor-login');
                 break;
