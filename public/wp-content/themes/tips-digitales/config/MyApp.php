@@ -186,6 +186,7 @@ class MyApp
         $this->contenedor_formulario_init();
         $this->contenedor_timeline_init();
         $this->contenedor_dependencias_init();
+        $this->contenedor_calendario_init();
 
         $this->contenedor_login_register_init();
     }
@@ -271,6 +272,14 @@ class MyApp
         require_once(SRC_PATH . 'Blocks/ContenedorTimeline/MyContenedorTimeline.php');
 
         $block = new MyContenedorTimeline();
+        $block->init();
+    }
+
+    private function contenedor_calendario_init()
+    {
+        require_once(SRC_PATH . 'Blocks/ContenedorCalendario/MyContenedorCalendario.php');
+
+        $block = new MyContenedorCalendario();
         $block->init();
     }
 

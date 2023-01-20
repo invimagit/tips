@@ -139,4 +139,12 @@
 
         $container->views_blocks_container('ContenedorTimeline');
     }
+
+    if(get_field('agregar_calendario', get_the_ID()) == 'si')
+    {
+        require_once(SRC_PATH . 'BlocksContainer/MyBlocksContainer.php');
+        $container = new MyBlocksContainer();
+
+        $container->views_blocks_container('ContenedorCalendario');
+    }
 ?>

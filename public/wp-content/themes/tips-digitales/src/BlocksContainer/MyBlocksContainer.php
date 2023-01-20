@@ -32,6 +32,10 @@ class MyBlocksContainer
                 get_template_part('src/Blocks/ContenedorTimeline/views/content', 'contenedor-timeline');
                 break;
 
+            case 'ContenedorCalendario':
+                get_template_part('src/Blocks/ContenedorCalendario/views/content', 'contenedor-calendario');
+                break;
+
             case 'ContenedorDependencias':
                 get_template_part('src/Blocks/ContenedorDependencias/views/content', 'contenedor-dependencias', $args);
                 break;

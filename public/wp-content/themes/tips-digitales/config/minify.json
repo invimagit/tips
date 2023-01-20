@@ -16,6 +16,7 @@
     combine:"../src/Blocks/ContenedorLoginRegister/assets/css/login-register.css",
     combine:"../src/Blocks/ContenedorDependencias/assets/css/dependencias.css",
     combine:"../src/Blocks/ContenedorTimeline/assets/css/timeline.css",
+    combine:"../src/Blocks/ContenedorCalendario/assets/css/calendario.css",
 
     //CSS PostTypes
     combine:"../src/PostTypes/Cursos/assets/css/cursos.css",
@@ -38,6 +39,7 @@
     combine:"../public/js/bootstrap-datepicker.es.min.js",
     combine:"../public/js/jquery.uploadPreview.js",
     combine:"../public/js/slick.js",
+    combine:"../public/js/fullcalendar.js",
 
     //JS Blocks
     combine:"../src/Blocks/ContenedorFormulario/assets/js/modal-formulario.js",
@@ -45,6 +47,7 @@
     combine:"../src/Blocks/ContenedorLoginRegister/assets/js/login-register.js",
     combine:"../src/Blocks/ContenedorDependencias/assets/js/dependencias.js",
     combine:"../src/Blocks/ContenedorTimeline/assets/js/timeline.js",
+    combine:"../src/Blocks/ContenedorCalendario/assets/js/calendario.js",
 
     //JS PostTypes
 
