@@ -101,14 +101,14 @@ a:hover, a:active
   margin: auto;
 }
 
-.site-branding
-{
-  background: var(--banner_gov);
+.site-branding {
+    background: var(--banner_gov);
+    height: 45px
 }
 
-.site-branding-tips
-{
-  margin: 20px 0px;
+.site-branding-tips {
+    margin: 20px 0;
+    height: 112px
 }
 
 .site-navbar
@@ -802,6 +802,10 @@ div#offcanvas1
 input#search
 {
   border: 1px solid !important;
+}
+
+.searchElement {
+    border: 3px solid #dbdce1 !important
 }
 
 button.btn.btn-outline-secondary.bg-white.border-bottom-0.border.rounded-pill.searchElement

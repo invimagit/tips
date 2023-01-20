@@ -88,7 +88,7 @@ class MyApp
         $this->define('APP_TEMPLATE_PATH', get_stylesheet_directory());
         $this->define('ASSETS_PUBLIC_PATH', get_template_directory_uri().'/public/');
 
-        $this->define('REQUIRED_PLUGINS',array('ACF'=>'advanced-custom-fields-pro/acf.php', 'WP_REST_CACHE'=>'wp-rest-cache/wp-rest-cache.php'));
+        $this->define('REQUIRED_PLUGINS',array('ACF'=>'advanced-custom-fields-pro/acf.php'));
 
         $this->define('SRC_PATH', get_template_directory().'/src/');
 
