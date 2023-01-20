@@ -21,14 +21,29 @@ jQuery(document).ready(function($)
       events:
       [
         {
-          title: 'my event',
-          start: '2018-09-01',
-          backgroundColor: '#000000'
-        }
-      ]
+          start: '2023-01-25T10:00:00',
+          end: '2023-01-25T16:00:00',
+          display: 'background',
+          backgroundColor: '#ff9f89'
+        },
+        {
+          start: '2023-01-25T17:00:00',
+          end: '2023-01-25T23:00:00',
+          display: 'background',
+          backgroundColor: '#ff9f89'
+        },
+      ],
+      selectOverlap: function(event)
+      {
+        console.log("Eventos");
+          // Here you will get all background events which are on same time.
+          console.log(event);
+          return event.rendering === 'background';
+      },
 
       eventClick: function (info) {
-          $('#modalEvents').modal('show')
+        console.log(info);
+          $('#modalEvents').modal('show');
       },
   });
   calendar.render();
