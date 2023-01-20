@@ -26,7 +26,7 @@ define( 'DB_NAME', 'tips_digital' );
 define( 'DB_USER', 'user_t1ps' );
 
 /** Database password */
-define( 'DB_PASSWORD', ')YCW5m$zcXvUj&-K' );
+define( 'DB_PASSWORD', 'Molecule123!' );
 
 /** Database hostname */
 define( 'DB_HOST', '172.30.71.94' );
