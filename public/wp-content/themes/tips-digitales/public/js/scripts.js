@@ -7617,7 +7617,7 @@ jQuery(document).ready(function($)
 {
   $(".timeline").slick(
   {
-    centerMode: true,
+    centerMode: false,
     centerPadding: '30px',
     dots: false,
     infinite: false,

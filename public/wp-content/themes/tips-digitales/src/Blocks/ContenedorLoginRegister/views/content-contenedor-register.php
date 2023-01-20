@@ -29,7 +29,7 @@
 
                           <div class="mb-3">
                             <label class="form-label">Tipo de documento de identidad<span class="text-danger">*</span></label>
-                            <select class="form-select wpcf7-form-control wpcf7-text form-control" aria-required="true" id="registerTipoDocumento" aria-invalid="false" name="registerTipoDocumento" required="required" required>
+                            <select class="selectpicker form-select wpcf7-form-control wpcf7-text form-control" aria-required="true" id="registerTipoDocumento" aria-invalid="false" name="registerTipoDocumento" required="required" required>
                               <option value="default" selected>Seleccionar</option>
                               <option value="CEDULA">CEDULA</option>
                               <option value="PASAPORTE">PASAPORTE</option>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-12 col-lg-6">
                           <div class="mb-3">
-                            <label class="form-label">Fotografía<span class="text-danger">*</span></label>
+                            <label class="form-label">Fotografía<span class="text-danger"></span></label>
                             <div id="image-preview">
 
                               <label for="registerFoto" id="image-label">Subir foto</label>
@@ -84,7 +84,7 @@
                           <div class="mb-3">
 
                             <label class="form-label">Identidad de género<span class="text-danger">*</span></label>
-                            <select class="form-select wpcf7-form-control wpcf7-text form-control" aria-required="true" id="registerIdentidadGenero" aria-invalid="false" name="registerIdentidadGenero" required="required" required>
+                            <select class="selectpicker form-select wpcf7-form-control wpcf7-text form-control" aria-required="true" id="registerIdentidadGenero" aria-invalid="false" name="registerIdentidadGenero" required="required" required>
                               <option value="default" selected>Seleccionar</option>
                               <option value="Femenino">Femenino</option>
                               <option value="Masculino">Masculino</option>
@@ -102,7 +102,7 @@
                         <div class="col-12 col-lg-6">
                           <div class="mb-3">
                             <label class="form-label">Localidad en la que vive<span class="text-danger">*</span></label>
-                            <select class="form-select wpcf7-form-control wpcf7-text form-control" aria-required="true" id="registerLocalidad" aria-invalid="false" name="registerLocalidad" required="required" required>
+                            <select class="selectpicker form-select wpcf7-form-control wpcf7-text form-control" aria-required="true" id="registerLocalidad" aria-invalid="false" name="registerLocalidad" required="required" required>
                               <option value="default" selected>Seleccionar</option>
                               <option value="Antonio Nariño">Localidad de Antonio Nariño</option>
                               <option value="Barrios Unidos">Localidad de Barrios Unidos</option>

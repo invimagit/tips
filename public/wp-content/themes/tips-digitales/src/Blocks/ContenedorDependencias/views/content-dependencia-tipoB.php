@@ -11,7 +11,7 @@
             <div class="col-md-7">
               <div class="d-flex">
                 <span class="iconInfo me-2"></span>
-                <h2 class="title-secciones"><?php echo get_sub_field('nombre_de_la_dependencia'); ?></h2>
+                <h2 class="title-secciones"><?php echo ucwords(strtolower(get_sub_field('nombre_de_la_dependencia'))); ?></h2>
               </div>
             </div>
 
@@ -25,10 +25,10 @@
                   if( have_rows('participantes') ):
                     while ( have_rows('participantes') ) : the_row();
                 ?>
-                      <div class="col-12 col-md-6 mb-4">
-                        <div class="slickItem my-4">
-                          <h3 class="mb-0 title-participantes"><?php echo get_sub_field('nombre'); ?></h3>
-                          <p class="mb-0 descripcion-participantes"><?php echo get_sub_field('cargo'); ?></p>
+                      <div class="col-12 col-md-6">
+                        <div class="slickItem my-2">
+                          <h3 class="mb-0 title-participantes"><?php echo ucwords(strtolower(get_sub_field('nombre'))); ?></h3>
+                          <p class="mb-0 descripcion-participantes"><?php echo ucwords(strtolower(get_sub_field('cargo'))); ?></p>
                           <div class="row">
                             <div class="col-12 col-md-11">
                               <hr class="hrParticipantes m-0">

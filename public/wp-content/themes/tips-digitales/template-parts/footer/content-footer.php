@@ -40,7 +40,7 @@
 		<div class="row">
 	    	<div class="col-lg-2">
 	  			<div class="logo-footer-gov">
-		  			<a href="<?php echo $grupo_footer['link_gobierno']; ?>">
+		  			<a href="<?php echo $grupo_footer['link_gobierno']; ?>" target="_blank">
 		      			<img src="<?php echo $grupo_footer['logo_gobierno']; ?>" class="img-fluid" alt="Logo Gobierno de Colombia">
 			      	</a>
 		      	</div>

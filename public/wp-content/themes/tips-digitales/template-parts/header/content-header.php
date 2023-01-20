@@ -6,13 +6,13 @@
 	if($currentUser != 0)
 	{
 		$linkUserPage = '#';
-		$userName = 'Hola <br>' . get_user_meta( $currentUser, 'user_nickname', true );
+		$userName = '<span class="nombreButtonUser">Hola <br>' . get_user_meta( $currentUser, 'user_nickname', true ) . '</span>';
 		$userFoto = get_user_meta( $currentUser, 'user_foto', true );
 	}
 	else
 	{
 		$linkUserPage = $grupo_header['pagina_quiero_participar'];
-		$userName = 'Quiero <br>Participar';
+		$userName = '<span class="nombreButtonUser">Quiero <br>Participar</span>';
 		$userFoto = get_template_directory_uri() . '/public/images/quiero-participar-icon.png';
 	}
 
@@ -24,7 +24,7 @@
 		<div class="row">
 	    	<div class="col-lg-3">
 	  			<div class="logo">
-		  				<a href="<?php echo $grupo_header['link_gobierno']; ?>">
+		  				<a href="<?php echo $grupo_header['link_gobierno']; ?>" target="_blank">
 								<img src="<?php echo $grupo_header['logo_gobierno']; ?>" class="" alt="Logo Gobierno">
 			      	</a>
 		      	</div>

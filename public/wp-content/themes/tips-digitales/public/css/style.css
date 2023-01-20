@@ -129,6 +129,13 @@ a:hover, a:active
   color: var(--tertiary);
 }
 
+span.nombreButtonUser {
+    position: relative;
+    float: right;
+    right: 10px;
+    text-align: right
+}
+
 li.menu-item-circle
 {
   display: inline-block;
@@ -1082,7 +1089,6 @@ button.slick-next.slick-arrow
     border-radius: 15%;
     background-position: 63%;
     background-size: 66% 56%;
-    right: 0px;
     top: 40%;
     width: 32px;
     z-index: 10;
@@ -1094,7 +1100,6 @@ button.slick-prev.slick-arrow
     border-radius: 15%;
     background-position: 34%;
     background-size: 66% 56%;
-    left: 0px;
     top: 40%;
     width: 32px;
     z-index: 10;

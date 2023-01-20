@@ -6,7 +6,7 @@
 			    while ( have_rows('redes') ) : the_row();
 		?>
 		    	<span class="icono_redes_bloque_datos col-md-3">
-					<a href="<?php echo get_sub_field('link');?>">
+					<a href="<?php echo get_sub_field('link');?>" target="_blank">
 						<?php echo get_sub_field('icono');?>
 					</a>
 		    	</span>
