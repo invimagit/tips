@@ -21724,8 +21724,8 @@ jQuery(document).ready(function($)
   var calendar = new FullCalendar.Calendar(calendarEl,
   {
       initialView: 'dayGridMonth',
-      selectable: true,
       locales: 'es',
+      fixedWeekCount: false,
       headerToolbar:
       {
           left: 'prev',
@@ -21737,33 +21737,27 @@ jQuery(document).ready(function($)
           year: 'numeric',
           month: 'short',
       },
-      events:
-      [
-        {
-          start: '2023-01-25T10:00:00',
-          end: '2023-01-25T16:00:00',
-          display: 'background',
-          backgroundColor: '#ff9f89'
-        },
-        {
-          start: '2023-01-25T17:00:00',
-          end: '2023-01-25T23:00:00',
-          display: 'background',
-          backgroundColor: '#ff9f89'
-        },
-      ],
-      selectOverlap: function(event)
+      eventClick: function(events)
       {
-        console.log("Eventos");
-          // Here you will get all background events which are on same time.
-          console.log(event);
-          return event.rendering === 'background';
+            console.log(events);
+            $('#modalEvents').modal('show');
       },
-
-      eventClick: function (info) {
-        console.log(info);
-          $('#modalEvents').modal('show');
+      events: [
+      {
+        "start": "2023-01-02",
+        "end": "2023-01-02",
+        display: 'background',
       },
+      {
+        "start": "2023-01-24",
+        "end": "2023-01-24",
+        display: 'background',
+      },
+      {
+        "start": "2023-01-28",
+        "end": "2023-01-28",
+        display: 'background',
+      }],
   });
   calendar.render();
 
@@ -21778,5 +21772,5 @@ jQuery(document).ready(function($)
 
 function closeModal()
 {
-    $('#modalEvents').modal('hide')
+    jQuery('#modalEvents').modal('hide')
 }
