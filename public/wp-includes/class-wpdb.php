@@ -1772,6 +1772,15 @@ class wpdb {
 			}
 
 			if ( WP_DEBUG ) {
+				var_dump($this->dbh);
+				var_dump($host);
+				var_dump($this->dbuser);
+				var_dump($this->dbpassword);
+				var_dump($port);
+				var_dump($socket);
+				var_dump($client_flags);
+
+
 				mysqli_real_connect( $this->dbh, $host, $this->dbuser, $this->dbpassword, null, $port, $socket, $client_flags );
 			} else {
 				// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged

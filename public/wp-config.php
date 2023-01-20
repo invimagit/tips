@@ -20,13 +20,13 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'tips_digital' );
+define( 'DB_NAME', 'tipsPrueba' );
 
 /** Database username */
-define( 'DB_USER', 'user_t1ps' );
+define( 'DB_USER', 'dbuser' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'Molecule123!' );
+define( 'DB_PASSWORD', 'dbpass' );
 
 /** Database hostname */
 define( 'DB_HOST', '172.30.71.94' );
