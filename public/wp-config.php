@@ -29,7 +29,7 @@ define( 'DB_USER', 'dbuser' );
 define( 'DB_PASSWORD', 'dbpass' );
 
 /** Database hostname */
-define( 'DB_HOST', '172.30.71.94' );
+define( 'DB_HOST', '172.30.189.160' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
