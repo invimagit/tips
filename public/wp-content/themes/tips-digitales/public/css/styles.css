@@ -3021,9 +3021,15 @@ button.list-group-item:hover {
     position: relative;
 }
 
+.fc-day-today
+{
+  background-color: inherit !important;
+}
+
 .borderBottom
 {
     border-bottom: 2px solid var(--primary);
+    padding: 0px 0px 10px 0px;
 }
 
 .fc .fc-bg-event, .fc-bg-event{
@@ -3103,6 +3109,7 @@ a.fc-col-header-cell-cushion {
 .modal-content-calendario {
     border: 6px solid var(--primary);
     border-radius: 10px;
+    height: 420px;
 }
 
 .modal-body-calendario {
@@ -3117,7 +3124,7 @@ a.fc-col-header-cell-cushion {
     font-weight: 500;
     color: var(--tertiary)!important;
     text-transform: capitalize!important;
-    font-size: 1.5em!important;
+    font-size: 2em!important;
 }
 
 .modal-subtitle-calendario
@@ -3129,12 +3136,11 @@ a.fc-col-header-cell-cushion {
     font-size: 1.2em!important
 }
 
-.modal-descripcion-calendario
+.modal-descripcion-calendario, .modal-direccion-calendario, .modal-fecha-calendario
 {
     font-family: 'Klavika';
     font-weight: 400;
     color: var(--tertiary)!important;
-    text-transform: capitalize!important;
     font-size: 1em!important
 }
 

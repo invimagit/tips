@@ -17,40 +17,42 @@
                     </div>
 
                     <div class="modal-body modal-body-calendario px-4 py-4">
-                        <h3 class="modal-title-calendario title pb-1">Nombre del evento</h3>
+                        <div class="events-container">
+                            <h3 class="modal-title-calendario title py-2"></h3>
 
-                        <h6 class="accent modal-subtitle-calendario mb-0">
-                            Descripción
-                        </h6>
-                        <p class="accent modal-descripcion-calendario my-1">
-                            Pedagogía sobre derecho con niños, niñas y adolescentes en el barrio X y Z, máximo dos
-                            lineas de texto este parrafo.
-                        </p>
-                        <h6 class="accent modal-subtitle-calendario mb-0">
-                            Dirección
-                        </h6>
-                        <p class="accent modal-descripcion-calendario my-1">
-                            Calle 1 2#-3 abc , barrio Santa Teresita
-                        </p>
+                            <h6 class="accent modal-subtitle-calendario mb-0">
+                                Descripción
+                            </h6>
 
-                        <div class="row borderBottom">
-                            <div class="col-7">
-                                <h6 class="accent modal-subtitle-calendario mb-0">
-                                    Fecha
-                                </h6>
-                                <p class="accent modal-descripcion-calendario my-1">
-                                    25 de agosto de 2001 9:00 a.m.
-                                </p>
+                            <p class="accent modal-descripcion-calendario my-1"></p>
 
-                            </div>
-                            <div class="col-5 col-5 my-auto">
-                              <input class="wpcf7-form-control button-tips btn btn-primary p-1 m-1 col-12 col-sm-12 col-md-12" type="button" value="Quiero asistir" onclick="">
+                            <h6 class="accent modal-subtitle-calendario mb-0">
+                                Dirección
+                            </h6>
+                            <p class="accent modal-direccion-calendario my-1">
+                            </p>
+
+                            <div class="row borderBottom">
+                                <div class="col-7">
+                                    <h6 class="accent modal-subtitle-calendario mb-0">
+                                        Fecha
+                                    </h6>
+                                    <p class="accent modal-fecha-calendario my-1">
+                                    </p>
+
+                                </div>
+                                <div class="col-5 col-5 my-auto">
+                                  <input class="wpcf7-form-control button-tips btn btn-primary p-1 m-1 col-12 col-sm-12 col-md-12" type="button" value="Quiero asistir" onclick="">
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <script>
+      var ajaxURL = '<?php echo admin_url('admin-ajax.php'); ?>';
+    </script>
