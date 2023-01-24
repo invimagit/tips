@@ -35,7 +35,7 @@ class MyContenedorCalendario
 
     public function init_actions()
     {
-        add_action( 'init', [$this, 'acf_calendario_field'] );
+        //add_action( 'init', [$this, 'acf_calendario_field'] );
 
         add_action('wp_ajax_ajax_calendar_events', array($this, 'ajax_calendar_events'));
         add_action('wp_ajax_nopriv_ajax_calendar_events', array($this, 'ajax_calendar_events'));
@@ -58,35 +58,78 @@ class MyContenedorCalendario
     {
         $start      = esc_attr($_POST["start"]);
         $end        = esc_attr($_POST["end"]);
+        $taxonomies = esc_attr($_POST["taxonomies"]);
 
-        $result     = get_transient('calendar_events_' . $start . '_' . $end);
+        $taxonomies = json_decode($taxonomies);
+
+        if($taxonomies != false)
+            $transientName = 'calendar_events_' . $start . '_' . $end . "_" . implode('_', $taxonomies);
+        else
+            $transientName = 'calendar_events_' . $start . '_' . $end . "_no_filters";
+
+        $result     = get_transient($transientName);
 
         if (false === $result)
         {
             try
             {
-                $args = array
-                (
-                    'post_type' => 'eventos',
-                    'order' => 'ASC',
-                    'numberposts'   => -1,
-                    //'cat' => '2',
-                    'fields'        => 'ids',
-                    'meta_query' => array
+                if($taxonomies == false)
+                {
+                    $args = array
                     (
-                        'relation'      => 'AND',
-                        array(
-                            'key'       => 'fecha',
-                            'compare'   => '>=',
-                            'value'     => $start,
-                        ),
-                        array(
-                            'key'       => 'fecha',
-                            'compare'   => '<=',
-                            'value'     => $end,
+                        'post_type' => 'eventos',
+                        'order' => 'ASC',
+                        'numberposts'   => -1,
+                        'fields'        => 'ids',
+                        'meta_query' => array
+                        (
+                            'relation'      => 'AND',
+                            array(
+                                'key'       => 'fecha',
+                                'compare'   => '>=',
+                                'value'     => $start,
+                            ),
+                            array(
+                                'key'       => 'fecha',
+                                'compare'   => '<=',
+                                'value'     => $end,
+                            )
                         )
-                    ),
-                );
+                    );
+                }
+                else
+                {
+                    $args = array
+                    (
+                        'post_type' => 'eventos',
+                        'order' => 'ASC',
+                        'numberposts'   => -1,
+                        'fields'        => 'ids',
+                        'meta_query' => array
+                        (
+                            'relation'      => 'AND',
+                            array(
+                                'key'       => 'fecha',
+                                'compare'   => '>=',
+                                'value'     => $start,
+                            ),
+                            array(
+                                'key'       => 'fecha',
+                                'compare'   => '<=',
+                                'value'     => $end,
+                            )
+                        ),
+                        'tax_query' => array
+                        (
+                            array(
+                              'taxonomy' => 'seccion',
+                              'field' => 'term_id', 
+                              'terms' => $taxonomies,
+                              'include_children' => false
+                            )
+                        )
+                    );
+                }
 
                 $eventosID = get_posts($args);
 
@@ -126,7 +169,7 @@ class MyContenedorCalendario
                 else
                     $result['type'] = 'no-events';
 
-                set_transient('calendar_events_' . $start . '_' . $end, $result, 86400 );
+                set_transient($transientName, $result, 86400 );
             }
             catch (Exception $e)
             {

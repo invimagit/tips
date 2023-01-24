@@ -2,6 +2,8 @@ jQuery(document).ready(function($)
 {
   var calendarEl = document.getElementById('calendar');
   var all_events = [];
+  var charged_events_month = [];
+
   let containerClone = $('.events-container').clone().addClass('eventClone');
 
   var calendar = new FullCalendar.Calendar(calendarEl,
@@ -20,75 +22,105 @@ jQuery(document).ready(function($)
           year: 'numeric',
           month: 'short',
       },
-      viewRender: function(view,element)
+      datesSet: function(view,element)
       {
           var now = new Date();
-          var end = new Date();
-          end.setMonth(now.getMonth() + 3); //Adjust as needed
+          var endNext = new Date();
+          var endPrev = new Date();
 
-          if ( end < view.end) {
-              $("#calendar .fc-next-button").hide();
+          endNext.setMonth(now.getMonth() + 3);
+          endPrev.setMonth(now.getMonth() - 3);
+
+          if ( endNext < view.end)
+          {
+              $("#calendar .fc-next-button").css('opacity', '0.25');
+              $("#calendar .fc-next-button").prop("disabled", true);
+
               return false;
           }
-          else {
-              $("#calendar .fc-next-button").show();
+          else
+          {
+              $("#calendar .fc-next-button").css('opacity', '1');
+              $("#calendar .fc-next-button").prop("disabled", false);
+
           }
 
-          if ( view.start < now) {
-              $("#calendar .fc-prev-button").hide();
+          if ( view.start < endPrev)
+          {
+              $("#calendar .fc-prev-button").css('opacity', '0.25');
+              $("#calendar .fc-prev-button").prop("disabled", true);
+
               return false;
           }
-          else {
-              $("#calendar .fc-prev-button").show();
+          else
+          {
+              $("#calendar .fc-prev-button").css('opacity', '1');
+              $("#calendar .fc-prev-button").prop("disabled", false);
+
           }
       },
       events: function(date, timezone, callback)
       {
-        jQuery.ajax(
+        if(charged_events_month[date.startStr] != true)
         {
-          url: ajaxURL,
-          type: 'POST',
-          dataType: 'json',
-          data: 
+          jQuery.ajax(
           {
-            action: 'ajax_calendar_events',
-            start: date.startStr,
-            end: date.endStr
-          },
-          success: function(data) 
-          {
-            var events = [];
-            if (data != null)
+            url: ajaxURL,
+            type: 'POST',
+            dataType: 'json',
+            data: 
             {
-              if(data.type == 'success')
+              action: 'ajax_calendar_events',
+              start: date.startStr,
+              end: date.endStr,
+              taxonomies: JSON.stringify($('#calendar').data("filters"))
+            },
+            success: function(data) 
+            {
+              var events = [];
+              if (data != null)
               {
-                data.result.forEach(function(evento, index)
+                if(data.type == 'success')
                 {
-                  all_events[evento.ID] = evento;
-
-                  calendar.addEvent(
+                  data.result.forEach(function(evento, index)
                   {
-                    id: evento.ID,
-                    start: evento.fechaCalendario,
-                    end: evento.fechaCalendario,
-                    display: 'background',
-                  });
-                });
-              }
-            }
+                    all_events[evento.ID] = evento;
+                    charged_events_month[date.startStr] = true;
 
-            $('.modal-body-calendario').find(".eventClone").remove();
-            callback(events);
-          },
-          error: function (response)
-          {
-            console.log(response);
-          },
-          fail: function (response)
-          {
-            console.log(response);
-          }
-        });
+                    calendar.addEvent(
+                    {
+                      id: evento.ID,
+                      start: evento.fechaCalendario,
+                      end: evento.fechaCalendario,
+                      display: 'background',
+                      className: "selected-event",
+                    });
+                  });
+                }
+              }
+
+              $('.modal-body-calendario').find(".eventClone").remove();
+              callback(events);
+            },
+            error: function (response)
+            {
+              console.log(response);
+            },
+            fail: function (response)
+            {
+              console.log(response);
+            }
+          });
+        }
+      },
+      loading: function( isLoading )
+      {
+        if (isLoading == true)
+        {
+        }
+        else
+        {
+        }
       },
       dateClick: function (info)
       {
@@ -133,5 +165,4 @@ jQuery(document).ready(function($)
   });
 
   calendar.render();
-
 });

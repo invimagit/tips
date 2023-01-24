@@ -17,6 +17,8 @@
     combine:"../src/Blocks/ContenedorDependencias/assets/css/dependencias.css",
     combine:"../src/Blocks/ContenedorTimeline/assets/css/timeline.css",
     combine:"../src/Blocks/ContenedorCalendario/assets/css/calendario.css",
+    combine:"../src/Blocks/ContenedorParticipacionAlDia/assets/css/participacion-al-dia.css",
+    combine:"../src/Blocks/ContenedorFormularioSecciones/assets/css/formulario-secciones.css",
 
     //CSS PostTypes
     combine:"../src/PostTypes/Cursos/assets/css/cursos.css",

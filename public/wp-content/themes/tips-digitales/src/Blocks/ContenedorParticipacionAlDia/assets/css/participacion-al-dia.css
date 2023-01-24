@@ -1,0 +1,12 @@
+.container-participacion-al-dia
+{
+    width: 100%;
+    height: 500px;
+    display: block;
+    border: 1.4px solid var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border-radius: 18px;
+    box-shadow: 5px 4px #d3d0d0;
+}

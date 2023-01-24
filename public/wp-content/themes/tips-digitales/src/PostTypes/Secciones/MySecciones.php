@@ -443,7 +443,7 @@ class MySecciones
                 ),
                 array(
                     'key' => 'field_638e205b64579',
-                    'label' => 'Imágenes cursos',
+                    'label' => 'Imágenes',
                     'name' => '',
                     'type' => 'accordion',
                     'instructions' => '',
@@ -459,11 +459,11 @@ class MySecciones
                     'endpoint' => 0,
                 ),
                 array(
-                    'key' => 'field_638e1fb264576',
-                    'label' => 'Agregar imágenes cursos?',
-                    'name' => 'agregar_imagenes_cursos',
+                    'key' => 'field_638e1f8264686',
+                    'label' => 'Agregar imágenes?',
+                    'name' => 'agregar_imagenes',
                     'type' => 'button_group',
-                    'instructions' => 'Seleccione "Si" para agregar las imágenes de los cursos',
+                    'instructions' => 'Seleccione "Si" para agregar imágenes',
                     'required' => 1,
                     'conditional_logic' => 0,
                     'wrapper' => array(
@@ -481,8 +481,70 @@ class MySecciones
                     'return_format' => 'value',
                 ),
                 array(
+                    'key' => 'field_638e1fb264687',
+                    'label' => 'Tipo de imágenes',
+                    'name' => 'tipo_imagenes',
+                    'type' => 'button_group',
+                    'instructions' => 'Selecciona si quieres agregar una imagen estática para la sección o las imágenes de los cursos',
+                    'required' => 1,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_638e1f8264686',
+                                'operator' => '==',
+                                'value' => 'si',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'imagen_seccion' => 'Imagen estática',
+                        'imagen_cursos' => 'Imágenes cursos',
+                    ),
+                    'allow_null' => 0,
+                    'default_value' => 'imagen_seccion',
+                    'layout' => 'horizontal',
+                    'return_format' => 'value',
+                ),
+                array(
+                    'key' => 'field_638e2174e264A',
+                    'label' => 'Imagen Estática',
+                    'name' => 'imagen_estatica',
+                    'type' => 'image',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_638e1fb264687',
+                                'operator' => '==',
+                                'value' => 'imagen_seccion',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'url',
+                    'preview_size' => 'medium',
+                    'library' => 'uploadedTo',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
+                array(
                     'key' => 'field_638e2084f5b87',
-                    'label' => 'Imágenes',
+                    'label' => 'Imágenes de los cursos',
                     'name' => 'imagenes',
                     'type' => 'repeater',
                     'instructions' => '',
@@ -490,9 +552,9 @@ class MySecciones
                     'conditional_logic' => array(
                         array(
                             array(
-                                'field' => 'field_638e1fb264576',
+                                'field' => 'field_638e1fb264687',
                                 'operator' => '==',
-                                'value' => 'si',
+                                'value' => 'imagen_cursos',
                             ),
                         ),
                     ),
@@ -607,8 +669,7 @@ class MySecciones
                 11 => 'categories',
                 12 => 'tags',
                 13 => 'send-trackbacks',
-            ),
-            'active' => true,
+            ),            'active' => true,
             'description' => '',
         ));
 

@@ -3015,6 +3015,35 @@ button.list-group-item:hover {
         left: 10%
     }
 }
+.container-calendario
+{
+    width: 100%;
+    display: block !important;
+    border: 1.4px solid var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border-radius: 18px;
+    box-shadow: 5px 4px #d3d0d0;
+    height: 630px;
+}
+
+.container-calendario-info
+{
+    margin-top: -50px !important;
+    text-align: center;
+    display: block;
+    font-family: Klavika;
+    font-weight: 400;
+    color: var(--primary)!important;
+    font-size: 1em;
+}
+
+.fc .fc-view-harness
+{
+    height: 425px !important;
+}
+
 .fc .fc-scrollgrid-section-liquid>td
 {
     top: 20px;
@@ -3026,6 +3055,11 @@ button.list-group-item:hover {
   background-color: inherit !important;
 }
 
+.fc-bg-event
+{
+    background: none !important;
+}
+
 .borderBottom
 {
     border-bottom: 2px solid var(--primary);
@@ -3033,7 +3067,6 @@ button.list-group-item:hover {
 }
 
 .fc .fc-bg-event, .fc-bg-event{
-    background: #FFFFFF !important;
     opacity: 1 !important;
     border: 4px solid var(--primary) !important;
 }
@@ -3077,7 +3110,8 @@ button.list-group-item:hover {
     font-weight: 500;
     color: var(--tertiary) !important;
     text-transform: capitalize !important;
-    font-size: 4.75em !important
+    font-size: 2.4em !important;
+    text-align: center;
 }
 
 a.fc-col-header-cell-cushion {
@@ -3109,7 +3143,7 @@ a.fc-col-header-cell-cushion {
 .modal-content-calendario {
     border: 6px solid var(--primary);
     border-radius: 10px;
-    height: 420px;
+    height: 425px;
 }
 
 .modal-body-calendario {
@@ -3169,6 +3203,91 @@ a.fc-col-header-cell-cushion {
     background: #555
 }
 
+.fc .fc-daygrid-day-top {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 60%;
+    justify-content: center;
+    font-size: 1.4em !important;
+}
+
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    min-height: 18px !important;
+    position: relative;
+}
+
+/* ###### Estilos a modificar con js para eventos ###### */
+.selected-event::before {
+    content: '';
+    width: 8px;
+    height: 17px;
+    background-color: var(--tertiary)!important;
+    display: flex;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    top: 2px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.selected-event::after {
+    content: '';
+    height: 9px;
+    width: 8px;
+    background-color: var(--primary)!important;
+    border-radius: 50%;
+    bottom: 0;
+    top: 21px;
+    float: right;
+    margin-right: -8px;
+    margin-top: 25px;
+}
+
+.fc .fc-daygrid-day-frame {
+    min-height: 100%;
+    display: inline-flex !important;
+    width: 100% !important;
+    justify-content: space-evenly !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+}
+
+
+
+@media (max-width:767px)
+{
+    .fc .fc-toolbar-title {
+        font-size: 1.5em !important;
+    }
+}
+.container-participacion-al-dia
+{
+    width: 100%;
+    height: 500px;
+    display: block;
+    border: 1.4px solid var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border-radius: 18px;
+    box-shadow: 5px 4px #d3d0d0;
+}
+
+.container-formulario-secciones
+{
+    width: 100%;
+    display: block !important;
+    border: 1.4px solid var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border-radius: 18px;
+    box-shadow: 5px 4px #d3d0d0;
+    height: 630px;
+}
 .title-cursos{
     color: var(--tertiary);
     font-family: 'Klavika';

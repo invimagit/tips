@@ -1,0 +1,12 @@
+.container-formulario-secciones
+{
+    width: 100%;
+    display: block !important;
+    border: 1.4px solid var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border-radius: 18px;
+    box-shadow: 5px 4px #d3d0d0;
+    height: 630px;
+}

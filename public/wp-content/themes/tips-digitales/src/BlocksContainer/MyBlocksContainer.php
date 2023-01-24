@@ -36,8 +36,20 @@ class MyBlocksContainer
                 get_template_part('src/Blocks/ContenedorCalendario/views/content', 'contenedor-calendario');
                 break;
 
+            case 'EquipoParticipacion':
+                get_template_part('src/PostTypes/Secciones/views/content', 'equipo-participacion');
+                break;
+
             case 'ContenedorDependencias':
                 get_template_part('src/Blocks/ContenedorDependencias/views/content', 'contenedor-dependencias', $args);
+                break;
+
+            case 'ContenedorParticipacionAlDia':
+                get_template_part('src/Blocks/ContenedorParticipacionAlDia/views/content', 'contenedor-participacion-al-dia');
+                break;
+
+            case 'ContenedorFormularioSecciones':
+                get_template_part('src/Blocks/ContenedorFormularioSecciones/views/content', 'contenedor-formulario-secciones');
                 break;
 
             case 'Login':

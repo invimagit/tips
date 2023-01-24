@@ -91,7 +91,7 @@ class MyEventos
             'query_var'             => true,
             "has_archive"           => true,
             'exclude_from_search'   => false,
-            'publicly_queryable'    => true,
+            'publicly_queryable'    => false,
             'show_in_rest'          => false,
             'rewrite'               => array('slug' => $this->slug, 'with_front' => true),
             'capability_type'       => 'post',
