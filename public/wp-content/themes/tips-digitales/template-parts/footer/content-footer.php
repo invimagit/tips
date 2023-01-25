@@ -17,7 +17,9 @@
 						if( have_rows('bloque_de_datos', 'option') ):
 						    while ( have_rows('bloque_de_datos', 'option') ) : the_row();
 						    	$layouts = get_row_layout();
-								get_template_part('template-parts/footer/views/content', $layouts);
+						    	$transientName = $layouts . '_' . get_row_index();
+
+								get_template_part('template-parts/footer/views/content', $layouts, $transientName);
 						    endwhile;
 						else :
 						    // no layouts found
