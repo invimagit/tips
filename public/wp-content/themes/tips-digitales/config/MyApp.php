@@ -187,6 +187,8 @@ class MyApp
         $this->contenedor_timeline_init();
         $this->contenedor_dependencias_init();
         $this->contenedor_calendario_init();
+        $this->contenedor_participacion_al_dia_init();
+        $this->contenedor_formulario_secciones_init();
 
         $this->contenedor_login_register_init();
     }
@@ -280,6 +282,22 @@ class MyApp
         require_once(SRC_PATH . 'Blocks/ContenedorCalendario/MyContenedorCalendario.php');
 
         $block = new MyContenedorCalendario();
+        $block->init();
+    }
+
+    private function contenedor_participacion_al_dia_init()
+    {
+        require_once(SRC_PATH . 'Blocks/ContenedorParticipacionAlDia/MyContenedorParticipacionAlDia.php');
+
+        $block = new MyContenedorParticipacionAlDia();
+        $block->init();
+    }
+
+    private function contenedor_formulario_secciones_init()
+    {
+        require_once(SRC_PATH . 'Blocks/ContenedorFormularioSecciones/MyContenedorFormularioSecciones.php');
+
+        $block = new MyContenedorFormularioSecciones();
         $block->init();
     }
 
@@ -511,12 +529,13 @@ class MyApp
             wp_dequeue_script( 'google-recaptcha' );
             wp_dequeue_script( 'wpcf7-recaptcha' );
 
-            if(!is_singular('cursos'))
+/*
+            if(!is_singular('cursos') || !is_single('quiero-proponer-una-iniciativa'))
             {
                 wp_dequeue_script( 'contact-form-7' );
                 wp_dequeue_style( 'contact-form-7' );
             }
-
+*/
             if(is_single('conoce-al-equipo-de-participacion'))
             {
                 /*

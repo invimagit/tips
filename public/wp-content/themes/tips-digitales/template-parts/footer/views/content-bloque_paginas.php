@@ -1,5 +1,5 @@
 <?php
-	$transientName = 'footer_' . $args . '_temporal';
+	$transientName = 'footer_' . $args;
 
 	$data = get_transient($transientName);
 

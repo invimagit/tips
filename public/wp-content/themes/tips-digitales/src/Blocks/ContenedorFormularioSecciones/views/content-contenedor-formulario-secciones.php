@@ -25,7 +25,7 @@
 ?>
   <div class="<?php echo $ancho; ?>">
     <div class="my-2 mb-3 mx-1 px-md-4 pb-3">
-      <div class="container-formulario-secciones">
+      <div class="container-formulario-secciones pb-4">
         <?php echo get_field('formulario_contenedor_formulario'); ?>
       </div>
     </div>

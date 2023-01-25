@@ -50,17 +50,27 @@ jQuery(document).ready(function ($)
     }
   });
 
-  let modalRecoverPass = new bootstrap.Modal(document.getElementById('modalRecoverPass'),
-  {
-    backdrop: true,
-    keyboard: false
-  });
+  let recoverPassEl = document.getElementById('modalRecoverPass');
 
-  let modalRegister = new bootstrap.Modal(document.getElementById('modalRegister'),
+  if(recoverPassEl)
   {
-    backdrop: true,
-    keyboard: false
-  });
+    let modalRecoverPass = new bootstrap.Modal(recoverPassEl,
+    {
+      backdrop: true,
+      keyboard: false
+    });
+  }
+
+  let registerEl = document.getElementById('modalRegister');
+
+  if(registerEl)
+  {
+    let modalRegister = new bootstrap.Modal(registerEl,
+    {
+      backdrop: true,
+      keyboard: false
+    });
+  }
 
   $( "#loginForm" ).validate(
   {

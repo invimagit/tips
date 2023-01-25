@@ -34,6 +34,8 @@
         $container->views_blocks_container('RecoverPass');
     }
 ?>
-
+    <script>
+      var ajaxURL = '<?php echo admin_url('admin-ajax.php'); ?>';
+    </script>
 </body>
 </html>

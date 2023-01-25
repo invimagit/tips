@@ -57,10 +57,15 @@ jQuery(document).ready(function($)
 			HoldOn.open(options);
 		});
 
-		let modalFormulario = new bootstrap.Modal(document.getElementById('modalFormulario'),
+		let formulario = document.getElementById('modalFormulario');
+
+		if(formulario)
 		{
-			backdrop: true,
-			keyboard: false
-		});
+			let modalFormulario = new bootstrap.Modal(formulario,
+			{
+				backdrop: true,
+				keyboard: false
+			});
+		}
 	}
 });
