@@ -22,7 +22,7 @@
               <div class="descripcion-secciones pt-3 px-md-5 px-2">
                 <p><?php echo $grupo_recover_pass['descripcion']; ?></p>
 
-                <form action="" data-toggle="validator" enctype="multipart/form-data" class="wpcf7-form" id="recoverPassForm" method="post" novalidate="novalidate">
+                <form action="" data-toggle="validator" enctype="multipart/form-data" class="recover-pass-form" id="recoverPassForm" method="post" novalidate="novalidate">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12">
                             <div class="mb-3">

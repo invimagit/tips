@@ -117,7 +117,7 @@
 
                             if($numrows == 1)
                                 $buttonCols = 'col-lg-8 col-md-12';
-                            elseif($numrows == 2)
+                            elseif($numrows >= 2)
                                 $buttonCols = 'col-lg-6 col-md-12';
 
                             $cont = 0;

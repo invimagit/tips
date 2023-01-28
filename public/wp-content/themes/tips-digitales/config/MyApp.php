@@ -180,6 +180,7 @@ class MyApp
         $this->cursos_init();
         $this->secciones_init();
         $this->eventos_init();
+        $this->yoparticipoensalud_init();
 
         //Register blocks
         $this->contenedor_multimedia_init();
@@ -242,6 +243,14 @@ class MyApp
         require_once(SRC_PATH . 'PostTypes/Eventos/MyEventos.php');
 
         $postsType = new MyEventos();
+        $postsType->init();
+    }
+
+    private function yoparticipoensalud_init()
+    {
+        require_once(SRC_PATH . 'PostTypes/YoParticipoEnSalud/MyYoParticipoEnSalud.php');
+
+        $postsType = new MyYoParticipoEnSalud();
         $postsType->init();
     }
 
@@ -522,7 +531,7 @@ class MyApp
 
             wp_enqueue_script('bootstrap');
 
-            wp_register_script('scripts', ASSETS_PUBLIC_PATH . 'js/scripts.min.js', array(), APP_VERSION, true );
+            wp_register_script('scripts', ASSETS_PUBLIC_PATH . 'js/scripts.js', array(), APP_VERSION, true );
 
             wp_enqueue_script('scripts');
 

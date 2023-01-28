@@ -52,6 +52,10 @@ class MyBlocksContainer
                 get_template_part('src/Blocks/ContenedorFormularioSecciones/views/content', 'contenedor-formulario-secciones');
                 break;
 
+            case 'ContenedorYoParticipoEnSalud':
+                get_template_part('src/Blocks/ContenedorYoParticipoEnSalud/views/content', 'contenedor-yoparticipoensalud');
+                break;
+
             case 'Login':
                 get_template_part('src/Blocks/ContenedorLoginRegister/views/content', 'contenedor-login');
                 break;
@@ -71,7 +75,6 @@ class MyBlocksContainer
             case 'Cursos':
                 get_template_part('src/PostTypes/Cursos/views/content', 'cursos');
                 break;
-
 
 /*
             case 'featured_16_9_block':

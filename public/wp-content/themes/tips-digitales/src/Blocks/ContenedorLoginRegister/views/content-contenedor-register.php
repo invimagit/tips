@@ -16,7 +16,7 @@
               </div>
               <h3 class="title-secciones px-md-5 px-2">¡Quiero Participar!</h3>
               <div class="descripcion-secciones pt-3 px-2">
-                <form action="" data-toggle="validator" enctype="multipart/form-data" class="wpcf7-form" id="registerForm" method="post" novalidate="novalidate">
+                <form action="" data-toggle="validator" enctype="multipart/form-data" class="register-form" id="registerForm" method="post" novalidate="novalidate">
                   
                   <div class="row">
                     <div class="col-md-12">

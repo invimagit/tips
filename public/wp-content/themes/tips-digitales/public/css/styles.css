@@ -1056,26 +1056,24 @@ input.button-tips
 
 .iconInfo
 {
-  width: 10px;
-  height: 17px;
-  background-color: #28446b;
-  display: flex;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+    width: 10px;
+    height: 22px;
+    background-color: var(--tertiary);
+    display: flex;
+    border-radius: 5px;
+    margin-top: -8px;
 }
 
 .iconInfo::after
 {
-  content: '';
-  height: 8px;
-  width: 8px;
-  background-color: #1da0cc;
-  border-radius: 50%;
-  bottom: -20px;
-  position: relative;
-  left: 1.4px;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    bottom: -24px;
+    position: relative;
+    left: 1.3px;
 }
 
 .multi-item-carousel
@@ -1974,6 +1972,115 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+
+/* Slider */
+.slick-loading .slick-list
+{
+    background: #fff url('ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('./fonts/slick.eot');
+    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+}
+
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    bottom: -25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 0.5em !important;
+    line-height: 20px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    border: 2px solid var(--tertiary);
+    background: var(--tertiary);
 }
 div#modalFormulario h3
 {
@@ -3294,6 +3401,87 @@ a.fc-col-header-cell-cushion {
     position: relative;
     border-radius: 18px;
     box-shadow: 5px 4px #d3d0d0;
+}
+.container-yoparticipoensalud
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 1.4px solid var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border-radius: 18px;
+    box-shadow: 5px 4px #d3d0d0;
+}
+
+.sliders-yoparticipo
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 1px solid var(--primary);
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 4px #d3d0d0;
+}
+
+.title-container-yoparticipoensalud
+{
+    color: var(--tertiary);
+    font-family: 'Klavika';
+    font-weight: 500;
+    font-size: 2.4em;
+    letter-spacing: -2px;
+    margin-top: -12px;
+}
+
+.yoparticipoensalud-titulo-slider
+{
+
+}
+
+.yoparticipo-titulo-slider-text
+{
+    font-family: 'Klavika';
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 5px 20px;
+}
+
+.buttonClose-modal-yoparticipo
+{
+    position: absolute;
+    float: right;
+    right: 20px;
+    top: 20px;
+}
+
+.texto-descriptivo-modal-yoparticipo
+{
+    color: var(--tertiary);
+    font-family: 'Klavika';
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.container-vista-inmersiva
+{
+    height: 420px;
+    overflow-y: auto;
+}
+
+@media (max-width:425px)
+{
+    .title-container-yoparticipoensalud
+    {
+        font-size: 2em;
+    }
 }
 .title-cursos{
     color: var(--tertiary);

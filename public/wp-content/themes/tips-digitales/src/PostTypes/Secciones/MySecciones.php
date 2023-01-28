@@ -319,7 +319,7 @@ class MySecciones
                     ),
                     'button_label' => 'Agregar Botón',
                     'min' => '',
-                    'max' => 2,
+                    'max' => 4,
                 ),
                 array(
                     'key' => 'field_638e666b64579',
@@ -669,7 +669,8 @@ class MySecciones
                 11 => 'categories',
                 12 => 'tags',
                 13 => 'send-trackbacks',
-            ),            'active' => true,
+            ),
+            'active' => true,
             'description' => '',
         ));
 

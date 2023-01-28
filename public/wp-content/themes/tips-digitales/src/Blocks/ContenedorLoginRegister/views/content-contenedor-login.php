@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="pt-3 px-md-4 px-2">
-                    <form action="" data-toggle="validator" enctype="multipart/form-data" class="wpcf7-form" id="loginForm" method="post" novalidate="novalidate">
+                    <form action="" data-toggle="validator" enctype="multipart/form-data" class="login-form" id="loginForm" method="post" novalidate="novalidate">
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12">
                                 <div class="mb-3">

@@ -103,5 +103,100 @@ class MyEventos
 
     public function acf_fields()
     {
+        if( function_exists('acf_add_local_field_group') ):
+
+        acf_add_local_field_group(array(
+            'key' => 'group_63cd5ac808898',
+            'title' => 'Eventos',
+            'fields' => array(
+                array(
+                    'key' => 'field_63cd5ae20a65b',
+                    'label' => 'Descripción',
+                    'name' => 'descripcion',
+                    'type' => 'textarea',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => '',
+                    'new_lines' => '',
+                ),
+                array(
+                    'key' => 'field_63cd5b150a65c',
+                    'label' => 'Dirección',
+                    'name' => 'direccion',
+                    'type' => 'text',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_63cd5b200a65d',
+                    'label' => 'Fecha',
+                    'name' => 'fecha',
+                    'type' => 'date_time_picker',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'display_format' => 'd/m/Y g:i a',
+                    'return_format' => 'Y-m-d g:i a',
+                    'first_day' => 1,
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'eventos',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => array(
+                1 => 'the_content',
+                2 => 'excerpt',
+                3 => 'discussion',
+                4 => 'comments',
+                5 => 'revisions',
+                6 => 'slug',
+                7 => 'author',
+                8 => 'format',
+                10 => 'featured_image',
+                11 => 'categories',
+                12 => 'tags',
+                13 => 'send-trackbacks',
+            ),
+            'active' => true,
+            'description' => '',
+        ));
+
+        endif;
     }
 }

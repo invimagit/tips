@@ -19,6 +19,7 @@
     combine:"../src/Blocks/ContenedorCalendario/assets/css/calendario.css",
     combine:"../src/Blocks/ContenedorParticipacionAlDia/assets/css/participacion-al-dia.css",
     combine:"../src/Blocks/ContenedorFormularioSecciones/assets/css/formulario-secciones.css",
+    combine:"../src/Blocks/ContenedorYoParticipoEnSalud/assets/css/yoparticipoensalud.css",
 
     //CSS PostTypes
     combine:"../src/PostTypes/Cursos/assets/css/cursos.css",
@@ -50,6 +51,8 @@
     combine:"../src/Blocks/ContenedorDependencias/assets/js/dependencias.js",
     combine:"../src/Blocks/ContenedorTimeline/assets/js/timeline.js",
     combine:"../src/Blocks/ContenedorCalendario/assets/js/calendario.js",
+    combine:"../src/Blocks/ContenedorFormularioSecciones/assets/js/formulario-secciones.js",
+    combine:"../src/Blocks/ContenedorYoParticipoEnSalud/assets/js/yoparticipoensalud.js",
 
     //JS PostTypes
 

@@ -22,12 +22,27 @@
   else if($ancho == '10')
       $ancho = 'col-lg-2 col-md-12 col-12';
 
+  $userID = get_current_user_ID();
 ?>
   <div class="<?php echo $ancho; ?>">
     <div class="my-2 mb-3 mx-1 px-md-4 pb-3">
-      <div class="container-formulario-secciones pb-4">
-        <?php echo get_field('formulario_contenedor_formulario'); ?>
-      </div>
+      <?php
+        if($userID == 0):
+      ?>
+          <div id="disabledElement">
+            <div class="container-formulario-secciones pb-4">
+              <?php echo get_field('formulario_contenedor_formulario'); ?>
+            </div>
+          </div>
+      <?php
+        else:
+      ?>
+          <div class="container-formulario-secciones pb-4">
+            <?php echo get_field('formulario_contenedor_formulario'); ?>
+          </div>
+      <?php
+        endif;
+      ?>
     </div>
   </div>
 <?php

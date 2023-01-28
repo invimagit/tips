@@ -21035,12 +21035,20 @@ jQuery(document).ready(function($)
 	{
 		wpcf7.cached = 0;
 
+		let successTitleMSG = $('#successTitleMSG').val();
+		let successTextMSG = $('#successTextMSG').val();
+
+		let errorMSG = $('#errorTextMSG').val();
+
 		document.addEventListener( 'wpcf7invalid', function( event )
 		{
 			$('.wpcf7-response-output').attr('class', 'wpcf7-response-output alert alert-danger');
 		    
+		    if(errorMSG == '')
+		    	errorMSG = 'Por favor diligencia los campos requeridos';
+
 		    swal({
-		  		title: '<div class="textSuccessFormulario">Por favor diligencia los campos requeridos</div>',
+		  		title: '<div class="textSuccessFormulario">' + errorMSG + '</div>',
 		  		type: 'error',
 		  		showCloseButton: true,
 		  		showConfirmButton: false,
@@ -21063,8 +21071,8 @@ jQuery(document).ready(function($)
 			$('.wpcf7-response-output').attr('class', 'wpcf7-response-output alert alert-success');
 
 		    swal({
-		  		title: '<div class="textSuccessFormulario">Inscripcion Realizada Correctamente</div>',
-		  		text: 'Revisa tu correo próximamente',
+		  		title: '<div class="textSuccessFormulario">' + successTitleMSG + '</div>',
+		  		text: successTextMSG,
 		  		type: 'success',
 		  		showCloseButton: true,
 		  		showConfirmButton: false,
@@ -21878,6 +21886,7 @@ jQuery(document).ready(function($)
                 containerEvents.find('.modal-descripcion-calendario').last().html(all_events[i].descripcion);
                 containerEvents.find('.modal-direccion-calendario').last().html(all_events[i].direccion);
                 containerEvents.find('.modal-fecha-calendario').last().html(all_events[i].fechaMostrar);
+                containerEvents.find('.modal-button-asistir').last().attr("data-event", all_events[i].ID);
 
                 $('.modal-body-calendario').append(containerEvents);
               }
@@ -21887,6 +21896,7 @@ jQuery(document).ready(function($)
                 $('.modal-descripcion-calendario').html(all_events[i].descripcion);
                 $('.modal-direccion-calendario').html(all_events[i].direccion);
                 $('.modal-fecha-calendario').html(all_events[i].fechaMostrar);
+                $('.modal-button-asistir').attr("data-event", all_events[i].ID);
               }
 
               hasEvent = true;
@@ -21901,5 +21911,135 @@ jQuery(document).ready(function($)
     });
 
     calendar.render();
+
+    document.addEventListener("click", function(e)
+    {
+      const target = e.target.closest(".modal-button-asistir");
+
+      if(target)
+      {
+        var options = {
+             theme:"sk-rect",
+             message:'Enviando, Espere un momento',
+             textColor:"white"
+        };
+
+        HoldOn.open(options);
+
+        jQuery.ajax(
+        {
+          url: ajaxURL,
+          type: 'POST',
+          dataType: 'json',
+          data: 
+          {
+            action: 'ajax_calendar_asistir',
+            eventID: e.target.getAttribute("data-event"),
+            userID: e.target.getAttribute("data-user")
+          },
+          success: function(data) 
+          {
+            if (data != null)
+            {
+              HoldOn.close();
+              swal('<div class="textSuccessFormulario">' + data.title + '</div>', '', data.type);
+            }
+          },
+          error: function (response)
+          {
+            console.log(response);
+            HoldOn.close();
+          },
+          fail: function (response)
+          {
+            console.log(response);
+            HoldOn.close();
+          }
+        });
+      }
+    });
   }
+
+});
+jQuery(document).ready(function($)
+{
+	let disabledElement = document.getElementById("disabledElement");
+
+	if(disabledElement)
+	{
+		disabledElement.addEventListener("click",function()
+		{
+		    swal({
+		  		title: '<div class="textSuccessFormulario">Debes autenticarte para enviar una iniciativa</div>',
+		  		type: 'error',
+		  		showCloseButton: true,
+		  		showConfirmButton: false,
+				html:
+				'<a href="/iniciar-sesion/" class="wpcf7-form-control button-tips btn btn-primary p-1 m-1 col-12 col-sm-12 col-md-12">Iniciar Sesión</a>',
+			});
+		});
+
+		$('#disabledElement').find('input[type=text], textarea').attr('readonly','readonly');
+
+		$('#disabledElement').find('input[type=file], input[type=checkbox],checkbox').attr('disabled','disabled');
+	}
+});
+jQuery(document).ready(function($)
+{
+  let rows = $('.yoparticipoensalud-carousel').attr("data-row");
+  let cols = $('.yoparticipoensalud-carousel').attr("data-col");
+
+  $('.modal-yoparticipo').modal(
+  {
+      backdrop: true,
+      keyboard: false
+  });
+
+  $('.yoparticipoensalud-carousel-inmersivo').slick(
+  {
+    rows: 1,
+    autoplay: false,
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  });
+
+  $('.yoparticipoensalud-carousel').slick(
+  {
+    rows: parseInt(rows),
+    autoplay: false,
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: parseInt(cols),
+    slidesToScroll: parseInt(cols),
+    responsive:
+    [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
 });

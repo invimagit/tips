@@ -37,6 +37,7 @@
   else if($ancho == '10')
       $ancho = 'col-lg-2 col-md-12 col-12';
 
+  $userID = get_current_user_ID();
 ?>
     <div class="<?php echo $ancho; ?>">
         <div class="my-2 mb-3 mx-1 px-md-4 pb-3">
@@ -87,7 +88,17 @@
 
                             </div>
                             <div class="col-5 col-5 my-auto">
-                              <input class="wpcf7-form-control button-tips btn btn-primary p-1 m-1 col-12 col-sm-12 col-md-12" type="button" value="Quiero asistir" onclick="">
+                                <?php
+                                    if($userID == 0):
+                                ?>
+                                        <a href="<?php echo get_the_permalink(get_page_by_path( 'iniciar-sesion' ) ); ?>" class="wpcf7-form-control button-tips btn btn-primary p-1 m-1 col-12 col-sm-12 col-md-12">Quiero asistir</a>
+                                <?php
+                                    else:
+                                ?>
+                                        <input class="wpcf7-form-control button-tips btn btn-primary p-1 m-1 col-12 col-sm-12 col-md-12 modal-button-asistir" type="button" value="Quiero asistir" data-user="<?php echo $userID; ?>" data-event="">
+                                <?php
+                                    endif;
+                                ?>
                             </div>
                         </div>
                     </div>

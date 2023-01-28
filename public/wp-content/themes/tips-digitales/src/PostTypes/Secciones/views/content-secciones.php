@@ -22,7 +22,7 @@
 
                             if($numrows == 1)
                                 $buttonCols = 'col-lg-8 col-md-12';
-                            elseif($numrows == 2)
+                            elseif($numrows >= 2)
                                 $buttonCols = 'col-lg-6 col-md-12';
 
                             $cont = 0;
@@ -126,6 +126,14 @@
                     $container = new MyBlocksContainer();
 
                     $container->views_blocks_container('ContenedorFormularioSecciones');
+                }
+
+                if(get_field('agregar_yoparticipoensalud', get_the_ID()) == 'si')
+                {
+                    require_once(SRC_PATH . 'BlocksContainer/MyBlocksContainer.php');
+                    $container = new MyBlocksContainer();
+
+                    $container->views_blocks_container('ContenedorYoParticipoEnSalud');
                 }
 
             ?>

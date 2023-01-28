@@ -144,6 +144,7 @@ jQuery(document).ready(function($)
                 containerEvents.find('.modal-descripcion-calendario').last().html(all_events[i].descripcion);
                 containerEvents.find('.modal-direccion-calendario').last().html(all_events[i].direccion);
                 containerEvents.find('.modal-fecha-calendario').last().html(all_events[i].fechaMostrar);
+                containerEvents.find('.modal-button-asistir').last().attr("data-event", all_events[i].ID);
 
                 $('.modal-body-calendario').append(containerEvents);
               }
@@ -153,6 +154,7 @@ jQuery(document).ready(function($)
                 $('.modal-descripcion-calendario').html(all_events[i].descripcion);
                 $('.modal-direccion-calendario').html(all_events[i].direccion);
                 $('.modal-fecha-calendario').html(all_events[i].fechaMostrar);
+                $('.modal-button-asistir').attr("data-event", all_events[i].ID);
               }
 
               hasEvent = true;
@@ -167,5 +169,53 @@ jQuery(document).ready(function($)
     });
 
     calendar.render();
+
+    document.addEventListener("click", function(e)
+    {
+      const target = e.target.closest(".modal-button-asistir");
+
+      if(target)
+      {
+        var options = {
+             theme:"sk-rect",
+             message:'Enviando, Espere un momento',
+             textColor:"white"
+        };
+
+        HoldOn.open(options);
+
+        jQuery.ajax(
+        {
+          url: ajaxURL,
+          type: 'POST',
+          dataType: 'json',
+          data: 
+          {
+            action: 'ajax_calendar_asistir',
+            eventID: e.target.getAttribute("data-event"),
+            userID: e.target.getAttribute("data-user")
+          },
+          success: function(data) 
+          {
+            if (data != null)
+            {
+              HoldOn.close();
+              swal('<div class="textSuccessFormulario">' + data.title + '</div>', '', data.type);
+            }
+          },
+          error: function (response)
+          {
+            console.log(response);
+            HoldOn.close();
+          },
+          fail: function (response)
+          {
+            console.log(response);
+            HoldOn.close();
+          }
+        });
+      }
+    });
   }
+
 });

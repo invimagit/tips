@@ -1055,26 +1055,24 @@ input.button-tips
 
 .iconInfo
 {
-  width: 10px;
-  height: 17px;
-  background-color: #28446b;
-  display: flex;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+    width: 10px;
+    height: 22px;
+    background-color: var(--tertiary);
+    display: flex;
+    border-radius: 5px;
+    margin-top: -8px;
 }
 
 .iconInfo::after
 {
-  content: '';
-  height: 8px;
-  width: 8px;
-  background-color: #1da0cc;
-  border-radius: 50%;
-  bottom: -20px;
-  position: relative;
-  left: 1.4px;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    bottom: -24px;
+    position: relative;
+    left: 1.3px;
 }
 
 .multi-item-carousel
