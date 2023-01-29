@@ -11,6 +11,15 @@
     box-shadow: 5px 4px #d3d0d0;
 }
 
+.modal-body-inmersivo
+{
+    height: 430px;
+}
+
+.caratula-audio img {
+    max-height: 330px;
+}
+
 .sliders-yoparticipo
 {
     width: 100%;
@@ -66,12 +75,28 @@
     text-align: center;
 }
 
-.container-vista-inmersiva
+.container-vista-inmersiva-imagen
 {
     height: 420px;
     overflow-y: auto;
 }
 
+.container-vista-inmersiva-multimedia
+{
+    height: 420px;
+    overflow: none;
+}
+
+.container-vista-inmersiva-multimedia iframe {
+    width: 100%;
+}
+
+.container-vista-inmersiva-multimedia audio {
+    width: 100%;
+}
+.audio audio {
+    width: 100%;
+}
 @media (max-width:425px)
 {
     .title-container-yoparticipoensalud

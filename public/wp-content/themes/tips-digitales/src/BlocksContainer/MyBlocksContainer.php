@@ -56,6 +56,10 @@ class MyBlocksContainer
                 get_template_part('src/Blocks/ContenedorYoParticipoEnSalud/views/content', 'contenedor-yoparticipoensalud');
                 break;
 
+            case 'ContenedorCajaHerramientas':
+                get_template_part('src/Blocks/ContenedorCajaHerramientas/views/content', 'contenedor-caja-herramientas');
+                break;
+
             case 'Login':
                 get_template_part('src/Blocks/ContenedorLoginRegister/views/content', 'contenedor-login');
                 break;

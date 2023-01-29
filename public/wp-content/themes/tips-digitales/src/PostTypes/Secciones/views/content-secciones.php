@@ -136,6 +136,15 @@
                     $container->views_blocks_container('ContenedorYoParticipoEnSalud');
                 }
 
+                if(get_field('agregar_caja_de_herramientas', get_the_ID()) == 'si')
+                {
+                    require_once(SRC_PATH . 'BlocksContainer/MyBlocksContainer.php');
+                    $container = new MyBlocksContainer();
+
+                    $container->views_blocks_container('ContenedorCajaHerramientas');
+                }
+
+
             ?>
         </div>
     </div>

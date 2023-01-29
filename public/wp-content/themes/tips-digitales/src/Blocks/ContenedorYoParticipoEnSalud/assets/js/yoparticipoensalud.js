@@ -9,16 +9,38 @@ jQuery(document).ready(function($)
       keyboard: false
   });
 
-  $('.yoparticipoensalud-carousel-inmersivo').slick(
+  $('.modal-yoparticipo').on('hidden.bs.modal', function (e)
   {
-    rows: 1,
-    autoplay: false,
-    dots: false,
-    arrows: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1
+    $('#' + e.target.id).find('.container-vista-inmersiva-multimedia').each(function(i, obj)
+    {
+      var memory = $(this).html();
+      $(this).html(memory);      
+    });
+  });
+
+  $('.modal-yoparticipo').on('shown.bs.modal', function (e)
+  {
+    $('#' + e.target.id).find('.yoparticipoensalud-carousel-inmersivo').slick(
+    {
+      rows: 1,
+      autoplay: false,
+      dots: false,
+      lazyLoad: 'ondemand',
+      arrows: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    });
+  });
+
+  $('.yoparticipoensalud-carousel-inmersivo').on('beforeChange', function(event, slick, currentSlide, nextSlide)
+  {    
+    $('.container-vista-inmersiva-multimedia').each(function()
+    {
+      var memory = $(this).html();
+      $(this).html(memory);      
+    });
   });
 
   $('.yoparticipoensalud-carousel').slick(

@@ -181,6 +181,7 @@ class MyApp
         $this->secciones_init();
         $this->eventos_init();
         $this->yoparticipoensalud_init();
+        $this->herramientas_init();
 
         //Register blocks
         $this->contenedor_multimedia_init();
@@ -190,6 +191,9 @@ class MyApp
         $this->contenedor_calendario_init();
         $this->contenedor_participacion_al_dia_init();
         $this->contenedor_formulario_secciones_init();
+        $this->contenedor_yoparticipoensalud_init();
+
+        $this->contenedor_caja_herramientas_init();
 
         $this->contenedor_login_register_init();
     }
@@ -254,6 +258,14 @@ class MyApp
         $postsType->init();
     }
 
+    private function herramientas_init()
+    {
+        require_once(SRC_PATH . 'PostTypes/Herramientas/MyHerramientas.php');
+
+        $postsType = new MyHerramientas();
+        $postsType->init();
+    }
+
     private function contenedor_multimedia_init()
     {
         require_once(SRC_PATH . 'Blocks/ContenedorMultimedia/MyContenedorMultimedia.php');
@@ -307,6 +319,22 @@ class MyApp
         require_once(SRC_PATH . 'Blocks/ContenedorFormularioSecciones/MyContenedorFormularioSecciones.php');
 
         $block = new MyContenedorFormularioSecciones();
+        $block->init();
+    }
+
+    private function contenedor_yoparticipoensalud_init()
+    {
+        require_once(SRC_PATH . 'Blocks/ContenedorYoParticipoEnSalud/MyContenedorYoParticipoEnSalud.php');
+
+        $block = new MyContenedorYoParticipoEnSalud();
+        $block->init();
+    }
+
+    private function contenedor_caja_herramientas_init()
+    {
+        require_once(SRC_PATH . 'Blocks/ContenedorCajaHerramientas/MyContenedorCajaHerramientas.php');
+
+        $block = new MyContenedorCajaHerramientas();
         $block->init();
     }
 

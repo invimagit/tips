@@ -20,6 +20,7 @@
     combine:"../src/Blocks/ContenedorParticipacionAlDia/assets/css/participacion-al-dia.css",
     combine:"../src/Blocks/ContenedorFormularioSecciones/assets/css/formulario-secciones.css",
     combine:"../src/Blocks/ContenedorYoParticipoEnSalud/assets/css/yoparticipoensalud.css",
+    combine:"../src/Blocks/ContenedorCajaHerramientas/assets/css/caja-herramientas.css",
 
     //CSS PostTypes
     combine:"../src/PostTypes/Cursos/assets/css/cursos.css",

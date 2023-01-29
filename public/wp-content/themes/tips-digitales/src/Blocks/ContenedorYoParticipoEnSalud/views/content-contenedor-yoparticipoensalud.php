@@ -144,20 +144,22 @@
                                 </div>
                               </div>
                               <div class="col-lg-3 col-12">
-                                <a href="#" class="float-end wpcf7-form-control button-tips btn btn-primary p-1 m-1 col-12 col-sm-12 col-md-12">Ver más</a>
+                                <a href="<?php echo get_field('link_carrusel_yoparticipoensalud', $myPost); ?>" class="float-end wpcf7-form-control button-tips btn btn-primary p-1 m-1 col-12 col-sm-12 col-md-12">Ver más</a>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="modal-body py-2">
-                        <div class="yoparticipoensalud-carousel-inmersivo">
+                      <div class="modal-body modal-body-inmersivo py-2">
+                        <div class="yoparticipoensalud-carousel-inmersivo" id="carrusel-inmersivo-<?php echo $myPost; ?>">
                           <?php
                             if( have_rows('contenido_vista_inmersiva', $myPost) ):
+
                               while ( have_rows('contenido_vista_inmersiva', $myPost) ) : the_row();
 
                                 $tipo = get_sub_field('tipo_de_contenido', $myPost);
-                                get_template_part('src/Blocks/ContenedorYoParticipoEnSalud/views/content', $tipo . '-inmersivo', $myPost);
+
+                                get_template_part('src/Blocks/ContenedorYoParticipoEnSalud/views/content', $tipo . '-inmersivo', array('ID' => $myPost));
 
                               endwhile;
                             endif;

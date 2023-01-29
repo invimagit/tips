@@ -3148,7 +3148,7 @@ button.list-group-item:hover {
     margin-top: -50px !important;
     text-align: center;
     display: block;
-    font-family: Klavika;
+    font-family: 'Klavika';
     font-weight: 400;
     color: var(--primary)!important;
     font-size: 1em;
@@ -3415,6 +3415,15 @@ a.fc-col-header-cell-cushion {
     box-shadow: 5px 4px #d3d0d0;
 }
 
+.modal-body-inmersivo
+{
+    height: 430px;
+}
+
+.caratula-audio img {
+    max-height: 330px;
+}
+
 .sliders-yoparticipo
 {
     width: 100%;
@@ -3470,18 +3479,83 @@ a.fc-col-header-cell-cushion {
     text-align: center;
 }
 
-.container-vista-inmersiva
+.container-vista-inmersiva-imagen
 {
     height: 420px;
     overflow-y: auto;
 }
 
+.container-vista-inmersiva-multimedia
+{
+    height: 420px;
+    overflow: none;
+}
+
+.container-vista-inmersiva-multimedia iframe {
+    width: 100%;
+}
+
+.container-vista-inmersiva-multimedia audio {
+    width: 100%;
+}
+.audio audio {
+    width: 100%;
+}
 @media (max-width:425px)
 {
     .title-container-yoparticipoensalud
     {
         font-size: 2em;
     }
+}
+.download-file {
+    margin: auto;
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid var(--tertiary);;
+    border-radius: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    box-shadow: 5px 4px #d3d0d0;
+}
+
+.download-file img
+{
+    padding: 10px;
+    max-width: 170px;
+    max-height: 170px;
+    width: 100%;
+}
+
+.titulo-herramientas
+{
+    color: var(--tertiary);
+    font-family: 'Klavika';
+    font-weight: 500;
+    font-size: 2em;
+    letter-spacing: -2px;
+    margin-top: -12px;
+}
+
+.descripcion-herramientas
+{
+    color: var(--tertiary);
+    font-family: 'Klavika';
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.25;
+}
+
+.tipo-herramientas
+{
+    color: var(--tertiary);
+    font-family: 'Klavika';
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 1.25;
+    margin-top: -4px;
 }
 .title-cursos{
     color: var(--tertiary);
