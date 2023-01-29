@@ -47,3 +47,13 @@
     line-height: 1.25;
     margin-top: -4px;
 }
+
+li.page-item.first
+{
+    display: none;
+}
+
+li.page-item.last
+{
+    display: none;
+}

@@ -89,8 +89,8 @@ class MyTaxonomies
         $args = array(
             'hierarchical'      	=> true,
             'labels'            	=> $labels,
-			"public" 				=> false,
-			"publicly_queryable"	=> false,
+			"public" 				=> true,
+			"publicly_queryable"	=> true,
 			"hierarchical" 			=> true,
 			"show_ui" 				=> true,
 			"show_in_menu" 			=> true,

@@ -50,6 +50,13 @@ class MyContenedorCajaHerramientas
     {
     }
 
+    public function get_herramientas($tax)
+    {
+        $json = file_get_contents(get_site_url() . '/tipo-herramientas/' . $tax);
+        $obj = json_decode($json);
+        return $obj;
+    }
+
     public function acf_caja_herramientas_field()
     {
     }
