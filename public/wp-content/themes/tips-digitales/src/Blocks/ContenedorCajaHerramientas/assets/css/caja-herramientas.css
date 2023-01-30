@@ -3,12 +3,17 @@
     width: 100%;
     height: auto;
     display: block;
-    border: 2px solid var(--tertiary);;
+    border: 2px solid var(--tertiary);
     border-radius: 10px;
     margin-top: auto;
     margin-bottom: auto;
     position: relative;
     box-shadow: 5px 4px #d3d0d0;
+}
+
+.highlightSearch
+{
+    color: var(--primary) !important;
 }
 
 .download-file img
@@ -56,4 +61,26 @@ li.page-item.first
 li.page-item.last
 {
     display: none;
+}
+
+.buttonClose-modal-herramientas
+{
+    position: absolute;
+    float: right;
+    right: 20px;
+    top: 20px;
+}
+
+.alert-search
+{
+  margin: 10px 0px;
+  width: 95%;
+  font-family: 'Klavika';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 19px;
+  display: none;
+  width: 100%;
+  z-index: 5;
 }

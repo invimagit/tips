@@ -1,108 +1,67 @@
 jQuery(document).ready(function($)
 {
-  let items = $('#herramientasContainer').attr("data-items");
-  let urlInitial = $('#herramientasContainer').attr("data-url");
+  let isSearch = $("#herramientasContainer").attr('data-search');
 
-  var container = $('#paginationHerramientas');
-
-  container.pagination(
+  if(isSearch == 'true')
   {
-    dataSource: urlInitial,
-    locator: 'posts',
-    totalNumber: parseInt(items),
-
-    pageSize: 1,
-    showPageNumbers: false,
-    showNavigator: true,
-
-    ulClassName: 'pagination',
-    pageClassName : 'page-item',
-    ajax:
-    {
-      beforeSend: function()
+    $("html").animate
+    (
       {
-        container.prev().html('<div class="col-md-12 descripcion-herramientas px-5 py-3">Cargando las herramientas ...</div>');
-      }
-    },
-    callback: function(response, pagination)
-    {
-      var pageStart = (pagination.pageNumber - 1) * pagination.pageSize;
-      var pageEnd = pageStart + pagination.pageSize;
-      var pageItems = response.slice(pageStart, pageEnd);
-      var dataHtml = '';
-      var dataItem = '';
-      var dataTipo = '';
+        scrollTop: $("#herramientasContainer").offset().top
+      },
+      800 //speed
+    );
+  }
 
-      $.each(pageItems, function(index, item)
-      {
-        dataItem    = '<div class="col-12 col-md-6 mb-4 mt-1 herramientaItem"><div class="d-flex"><span class="iconInfo me-2"></span>';
-        dataTipo    = '<h3 class="tipo-herramientas">' + item.taxName +'</h3></div>';
-        dataRow     = '<div class="row"><div class="col-12 col-md-8">';
-        dataTitle   = '<h3 class="titulo-herramientas px-3">' + item.title + '</h3>';
-        dataDesc    = '<div class="descripcion-herramientas px-3">' + item.descripcion + '</div>';
-        dataDonwload= '</div><div class="col-12 col-md-4 mt-md-2 mt-4 d-block mx-auto"><div class="download-file">';
-        dataImage   = '<img src="' + item.imagen + '" class="img-fluid d-block mx-auto">';
-        dataClose   = '</div></div></div></div>';
-        
-        dataHtml    += dataItem + dataTipo + dataRow + dataTitle + dataDesc + dataDonwload + dataImage + dataClose;
-      });                  
-
-      container.prev().html(dataHtml);
-    }
+  $('.modal-herramientas').modal(
+  {
+      backdrop: true,
+      keyboard: false
   });
 
-  $('#searchFormHerramientas').submit(function(e)
+  $('.modal-herramientas').on('hidden.bs.modal', function (e)
   {
-    container.pagination('destroy');
-    container.html('');
-
-    e.preventDefault();
-    input = $("#searchHerramientas").val();
-
-    container.pagination(
+    $('#' + e.target.id).find('.container-vista-inmersiva-multimedia').each(function(i, obj)
     {
-      dataSource: urlInitial + '?keyword=' + input,
-      locator: 'posts',
-    pageSize: 1,
-    showPageNumbers: false,
-    showNavigator: true,
-      ulClassName: 'pagination',
-      pageClassName : 'page-item',
-      ajax:
-      {
-        beforeSend: function()
-        {
-          container.prev().html('<div class="col-md-12 descripcion-herramientas px-5 py-3">Cargando las herramientas ...</div>');
-        }
-      },
-      callback: function(response, pagination)
-      {
-        var pageStart = (pagination.pageNumber - 1) * pagination.pageSize;
-        var pageEnd = pageStart + pagination.pageSize;
-        var pageItems = response.slice(pageStart, pageEnd);
-        var dataHtml = '';
-        var dataItem = '';
-        var dataTipo = '';
-        console.log(response.length);
-        pagination.totalNumber = response.length;
-
-        $.each(pageItems, function(index, item)
-        {
-          dataItem    = '<div class="col-12 col-md-6 mb-4 mt-1 herramientaItem"><div class="d-flex"><span class="iconInfo me-2"></span>';
-          dataTipo    = '<h3 class="tipo-herramientas">' + item.taxName +'</h3></div>';
-          dataRow     = '<div class="row"><div class="col-12 col-md-8">';
-          dataTitle   = '<h3 class="titulo-herramientas px-3">' + item.title + '</h3>';
-          dataDesc    = '<div class="descripcion-herramientas px-3">' + item.descripcion + '</div>';
-          dataDonwload= '</div><div class="col-12 col-md-4 mt-md-2 mt-4 d-block mx-auto"><div class="download-file">';
-          dataImage   = '<img src="' + item.imagen + '" class="img-fluid d-block mx-auto">';
-          dataClose   = '</div></div></div></div>';
-          
-          dataHtml    += dataItem + dataTipo + dataRow + dataTitle + dataDesc + dataDonwload + dataImage + dataClose;
-        });                  
-
-        container.prev().html(dataHtml);
-      }
+      var memory = $(this).html();
+      $(this).html(memory);      
     });
   });
+
+    document.getElementById('searchFormHerramientas').addEventListener( 'submit', function( e )
+    {
+        let msg =  $('#searchHerramientas').val();
+
+        if(msg.length < 3)
+        {
+            e.preventDefault();
+
+            if($('.alert-search').data("visible") != true)
+            {
+                $('.alert-search').show();
+                $('.alert-search').data("visible", true);
+
+                setTimeout(hide_alert_search, 3000);
+            }
+        }
+    }, false );
+
+    $('#searchHerramientas').on('input',function(e)
+    {
+        let msg = $(this).val();
+
+        if(msg.length >= 3)
+        {
+            $('.alert-search').data("visible", false);
+            $('.alert-search').hide();
+        }
+    });
+
+    function hide_alert_search()
+    {
+        $('.alert-search').hide();
+
+        $('.alert-search').data("visible", false);
+    }
 
 });

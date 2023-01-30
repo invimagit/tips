@@ -9,7 +9,6 @@
     combine:"../public/css/bootstrap-datepicker.css",
     combine:"../public/css/bootstrap-multiselect.css",
     combine:"../public/css/slick.css",
-    combine:"../public/css/pagination.css",
 
     //CSS Blocks
     combine:"../src/Blocks/ContenedorFormulario/assets/css/modal-formulario.css",
@@ -45,7 +44,6 @@
     combine:"../public/js/jquery.uploadPreview.js",
     combine:"../public/js/slick.js",
     combine:"../public/js/fullcalendar.js",
-    combine:"../public/js/pagination.js",
 
     //JS Blocks
     combine:"../src/Blocks/ContenedorFormulario/assets/js/modal-formulario.js",
