@@ -1,13 +1,13 @@
 <?php
 	$term = get_queried_object();
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$posts_per_page = 10;
+	$paged = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
+	$posts_per_page = 4;
 
 	if(isset($_GET['keyword']))
 	{
 		$args = array
 		(
-			'post_type' 	=> 'herramientas',
+			'post_type' 	=> 'biblioteca-tips',
 			's' 			=> $_GET['keyword'],
 			'relevanssi' 	=> true,
 			'order'     	=> 'DESC',
@@ -21,14 +21,15 @@
 	{
 		$args = array
 		(
-			'post_type' 	=> 'herramientas',
+			'post_type' 	=> 'biblioteca-tips',
 			'tax_query' 	=> array
 			(
 				array
 				(
-				    'taxonomy'	=> 'tipo-herramientas',
+				    'taxonomy'	=> 'filtros',
 				    'field'		=> 'slug',
 				    'terms' 	=> $term->slug,
+				    'operator' => 'NOT IN',
 				)
 			),
 
@@ -62,22 +63,21 @@
 
 			$myPost = get_the_ID();
 
-			$taxonomy = get_the_terms($myPost, 'tipo-herramientas');
+			$taxonomy = get_the_terms($myPost, 'filtros');
 
             if($taxonomy)
                 $taxName = $taxonomy[0]->name;
             else
-                $taxName = 'Herramienta';
+                $taxName = 'Biblioteca';
 
             $objectPosts->posts[$cont]['ID'] = $myPost;
             $objectPosts->posts[$cont]['title'] = get_the_title($myPost);
             $objectPosts->posts[$cont]['descripcion'] = get_field('descripcion', $myPost);
             $objectPosts->posts[$cont]['icono'] = get_field('icono', $myPost);
 
-            $tipoArchivo = get_field('archivo', $myPost);
+            $tipoArchivo = get_field('tipo_de_archivo', $myPost);
 
             $objectPosts->posts[$cont]['tipoArchivo'] = $tipoArchivo;
-
             switch($tipoArchivo)
             {
             	case 'pdf':

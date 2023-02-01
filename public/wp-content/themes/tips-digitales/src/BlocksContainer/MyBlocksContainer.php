@@ -60,6 +60,10 @@ class MyBlocksContainer
                 get_template_part('src/Blocks/ContenedorCajaHerramientas/views/content', 'contenedor-caja-herramientas');
                 break;
 
+            case 'ContenedorBiblioteca':
+                get_template_part('src/Blocks/ContenedorBiblioteca/views/content', 'contenedor-biblioteca');
+                break;
+
             case 'Login':
                 get_template_part('src/Blocks/ContenedorLoginRegister/views/content', 'contenedor-login');
                 break;

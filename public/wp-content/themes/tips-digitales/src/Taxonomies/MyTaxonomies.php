@@ -27,12 +27,13 @@ class MyTaxonomies
     {
         $this->add_secciones_taxonomy();
         $this->add_herramientas_taxonomy();
+        $this->add_biblioteca_filtros_taxonomy();
     }
 
     public function add_secciones_taxonomy()
     {
         $labels = array(
-            'name'              => 'Secciones',
+            'name'              => 'Secciones asociadas',
             'singular_name'     => 'Sección',
             'search_items'      => 'Sección',
             'popular_items'     => '',
@@ -69,6 +70,7 @@ class MyTaxonomies
 
 		register_taxonomy( "seccion", [ "cursos" ], $args );
     }
+
 
     public function add_herramientas_taxonomy()
     {
@@ -111,4 +113,44 @@ class MyTaxonomies
 		register_taxonomy( "tipo-herramientas", [ "herramientas" ], $args );
     }
 
+    public function add_biblioteca_filtros_taxonomy()
+    {
+        $labels = array(
+            'name'              => 'Filtros asociados',
+            'singular_name'     => 'Filtro',
+            'search_items'      => 'Filtro',
+            'popular_items'     => '',
+            'all_items'         => 'Todos',
+            'parent_item'       => 'superior',
+            'parent_item_colon' => 'superior',
+            'edit_item'         => '',
+            'update_item'       => '',
+            'add_new_item'      => 'Nuevo',
+            'new_item_name'     => 'Nuevo',
+        );
+
+        $args = array(
+            'hierarchical'      	=> true,
+            'labels'            	=> $labels,
+			"public" 				=> true,
+			"publicly_queryable"	=> true,
+			"hierarchical" 			=> true,
+			"show_ui" 				=> true,
+			"show_in_menu" 			=> true,
+			"show_in_nav_menus" 	=> false,
+			"query_var" 			=> true,
+			"rewrite" 				=> [ 'slug' => 'filtros', 'with_front' => true,  'hierarchical' => false, ],
+			"show_admin_column" 	=> true,
+			"show_in_rest" 			=> true,
+			"show_tagcloud" 		=> false,
+			"rest_base" 			=> "filtros",
+			"rest_controller_class" => "WP_REST_Terms_Controller",
+			"rest_namespace" 		=> "wp/v2",
+			"show_in_quick_edit" 	=> false,
+			"sort" 					=> false,
+			"show_in_graphql" 		=> false,
+        );
+
+		register_taxonomy( "filtros", [ "biblioteca-tips" ], $args );
+    }
 }

@@ -182,6 +182,7 @@ class MyApp
         $this->eventos_init();
         $this->yoparticipoensalud_init();
         $this->herramientas_init();
+        $this->biblioteca_init();
 
         //Register blocks
         $this->contenedor_multimedia_init();
@@ -194,6 +195,7 @@ class MyApp
         $this->contenedor_yoparticipoensalud_init();
 
         $this->contenedor_caja_herramientas_init();
+        $this->contenedor_biblioteca_init();
 
         $this->contenedor_login_register_init();
     }
@@ -266,6 +268,14 @@ class MyApp
         $postsType->init();
     }
 
+    private function biblioteca_init()
+    {
+        require_once(SRC_PATH . 'PostTypes/Biblioteca/MyBiblioteca.php');
+
+        $postsType = new MyBiblioteca();
+        $postsType->init();
+    }
+
     private function contenedor_multimedia_init()
     {
         require_once(SRC_PATH . 'Blocks/ContenedorMultimedia/MyContenedorMultimedia.php');
@@ -335,6 +345,14 @@ class MyApp
         require_once(SRC_PATH . 'Blocks/ContenedorCajaHerramientas/MyContenedorCajaHerramientas.php');
 
         $block = new MyContenedorCajaHerramientas();
+        $block->init();
+    }
+
+    private function contenedor_biblioteca_init()
+    {
+        require_once(SRC_PATH . 'Blocks/ContenedorBiblioteca/MyContenedorBiblioteca.php');
+
+        $block = new MyContenedorBiblioteca();
         $block->init();
     }
 
@@ -559,7 +577,7 @@ class MyApp
 
             wp_enqueue_script('bootstrap');
 
-            wp_register_script('scripts', ASSETS_PUBLIC_PATH . 'js/scripts.js', array(), APP_VERSION, true );
+            wp_register_script('scripts', ASSETS_PUBLIC_PATH . 'js/scripts.min.js', array(), APP_VERSION, true );
 
             wp_enqueue_script('scripts');
 
