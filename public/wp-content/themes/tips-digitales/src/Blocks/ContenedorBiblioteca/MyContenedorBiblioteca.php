@@ -94,6 +94,7 @@ class MyContenedorBiblioteca
 
         return $terms;
     }
+
     public function get_url_pagination($actualURL, $page, $keyword, $filtros)
     {
         if($keyword != '')

@@ -1,7 +1,7 @@
 <?php
 	$term = get_queried_object();
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$posts_per_page = 10;
+	$paged = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
+	$posts_per_page = 4;
 
 	if(isset($_GET['keyword']))
 	{

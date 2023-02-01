@@ -27,17 +27,19 @@
 ?>
     <div class="<?php echo $ancho; ?>">
       <div class="my-2 mb-3 mx-1 px-md-4 pb-3">
-        <?php
-          if( have_rows('equipos', get_the_ID()) ):
-            $cont = 1;
-            while ( have_rows('equipos', get_the_ID()) ) : the_row();
-              $container->views_blocks_container('ContenedorDependencias', array('ID' => $cont));
-              $cont++;
-            endwhile;
-          else :
-              // no layouts found
-          endif;
-        ?>
+        <div class="row">
+          <?php
+            if( have_rows('equipos', get_the_ID()) ):
+              $cont = 1;
+              while ( have_rows('equipos', get_the_ID()) ) : the_row();
+                $container->views_blocks_container('ContenedorDependencias', array('ID' => $cont));
+                $cont++;
+              endwhile;
+            else :
+                // no layouts found
+            endif;
+          ?>
+        </div>
       </div>
     </div>
 <?php
