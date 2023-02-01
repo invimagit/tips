@@ -122,6 +122,56 @@ class MyContenedorBiblioteca
 
     public function acf_contenedor_biblioteca_field()
     {
+        if( function_exists('acf_add_local_field_group') ):
+
+        acf_add_local_field_group(array(
+            'key' => 'group_63d93b716e344',
+            'title' => 'Contenedor Biblioteca Tips',
+            'fields' => array(
+                array(
+                    'key' => 'field_63d93b9ccc80f',
+                    'label' => 'Agregar Biblioteca Tips',
+                    'name' => 'agregar_biblioteca_tips',
+                    'type' => 'button_group',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'relevanssi_exclude' => 0,
+                    'choices' => array(
+                        'si' => 'Si',
+                        'no' => 'No',
+                    ),
+                    'allow_null' => 0,
+                    'default_value' => 'no',
+                    'layout' => 'horizontal',
+                    'return_format' => 'value',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'secciones',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+
+        endif;
     }
 
 }
