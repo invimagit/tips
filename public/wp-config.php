@@ -24,7 +24,7 @@ define( 'DB_NAME', 'tips_digital' );
 
 
 /** Database username */
-define( 'DB_USER', 'dbuser_t1ps_new' );
+define( 'DB_USER', 'dbuser_t1ps' );
 
 /** Database password */
 define( 'DB_PASSWORD', 'dbpass_t1ps' );
