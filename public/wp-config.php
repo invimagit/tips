@@ -93,14 +93,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-
-
-/*
-define( 'DB_NAME', 'tips_digital' );
-
-define( 'DB_USER', 'user_t1ps' );
-
-define( 'DB_PASSWORD', ')YCW5m$zcXvUj&-K' );
-
-define( 'DB_HOST', '172.30.166.114' );
-*/
